@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34fec35c2bb4f2880a04272d23fbc31, type: 3}
+  m_Name: BehavioursGenerationDatabase
+  m_EditorClassIdentifier: 
+  _genericArgumentKeys:
+  - _typeNameAndAssembly: LoadSceneEP, Assembly-CSharp
+    _guid: cd6f9b1b249da7941aad9721ffd6cc8d
+  - _typeNameAndAssembly: SceneLoadingProgressEP, Assembly-CSharp
+    _guid: 6184977fdd9d5e64c9d146f7849e47ca
+  _genericArgumentValues:
+  - _array:
+    - _arguments:
+      - _typeNameAndAssembly: LoadSceneEP, Assembly-CSharp
+        _guid: cd6f9b1b249da7941aad9721ffd6cc8d
+      _assemblyGUID: 5648b3bf797f156468a77465b8dc1745
+    - _arguments:
+      - _typeNameAndAssembly: SceneLoadingProgressEP, Assembly-CSharp
+        _guid: 6184977fdd9d5e64c9d146f7849e47ca
+      _assemblyGUID: 4958474c0aff17d4eaef5a332a98e5b1
+  _genericTypeValues:
+  - _array:
+    - _typeNameAndAssembly: GameEventWithParamListener`1, Assembly-CSharp
+      _guid: 8aa2f51c9e8249b4a888aef6b5573413
+      AssemblyGUID: 8ea3ffe608d300848ace96ec58c103a1
+      _argNames:
+      - T
+      _componentName: 
+      _order: 0
+  - _array:
+    - _typeNameAndAssembly: GameEventWithParamListener`1, Assembly-CSharp
+      _guid: 8aa2f51c9e8249b4a888aef6b5573413
+      AssemblyGUID: 8ea3ffe608d300848ace96ec58c103a1
+      _argNames:
+      - T
+      _componentName: 
+      _order: 0
+  _genericTypeKeys:
+  - _typeNameAndAssembly: GameEventWithParamListener`1, Assembly-CSharp
+    _guid: 8aa2f51c9e8249b4a888aef6b5573413
+    AssemblyGUID: 8ea3ffe608d300848ace96ec58c103a1
+    _argNames:
+    - T
+    _componentName: 
+    _order: 0

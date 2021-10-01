@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04e00c890644cc9adb05d0c17f5ee62, type: 3}
+  m_Name: SOGenerationDatabase
+  m_EditorClassIdentifier: 
+  _genericArgumentKeys:
+  - _typeNameAndAssembly: SceneChangedEP, Assembly-CSharp
+    _guid: 6556a81634760204eb38b9cc2ab5b8da
+  - _typeNameAndAssembly: LoadSceneEP, Assembly-CSharp
+    _guid: cd6f9b1b249da7941aad9721ffd6cc8d
+  - _typeNameAndAssembly: SceneLoadingProgressEP, Assembly-CSharp
+    _guid: 6184977fdd9d5e64c9d146f7849e47ca
+  _genericArgumentValues:
+  - _array:
+    - _arguments:
+      - _typeNameAndAssembly: SceneChangedEP, Assembly-CSharp
+        _guid: 6556a81634760204eb38b9cc2ab5b8da
+      _assemblyGUID: eccf07a7327a1514e9225bcad014b038
+    - _arguments:
+      - _typeNameAndAssembly: LoadSceneEP, Assembly-CSharp
+        _guid: cd6f9b1b249da7941aad9721ffd6cc8d
+      _assemblyGUID: 7867a069d9ef8d045ac3d433e2e0a101
+    - _arguments:
+      - _typeNameAndAssembly: SceneLoadingProgressEP, Assembly-CSharp
+        _guid: 6184977fdd9d5e64c9d146f7849e47ca
+      _assemblyGUID: a3ed997b3a560e24f994c283674ba46a
+  _genericTypeValues:
+  - _array:
+    - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
+      _guid: a94df4fc381636e4c90090e505a57574
+      AssemblyGUID: 
+      _argNames:
+      - T
+  - _array:
+    - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
+      _guid: a94df4fc381636e4c90090e505a57574
+      AssemblyGUID: 
+      _argNames:
+      - T
+  - _array:
+    - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
+      _guid: a94df4fc381636e4c90090e505a57574
+      AssemblyGUID: 
+      _argNames:
+      - T
+  _genericTypeKeys:
+  - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
+    _guid: a94df4fc381636e4c90090e505a57574
+    AssemblyGUID: 
+    _argNames:
+    - T
