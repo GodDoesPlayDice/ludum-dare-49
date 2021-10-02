@@ -18,7 +18,7 @@ public class StatScreenController : MonoBehaviour
         textWoodCount.text = "123";
         textGoldCount.text = "123";
         textAmount.text = "123 $";
-        textNews.text = "News! News! News!\nNews! News! News!\nNews! News! News!";
+        //textNews.text = "News! News! News!\nNews! News! News!\nNews! News! News!";
     }
 
     void Update()
