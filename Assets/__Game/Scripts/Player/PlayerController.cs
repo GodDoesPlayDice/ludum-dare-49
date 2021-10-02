@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour
     // animation variables
     private Animator animator;
 
+    // platform
+    private Transform platformTransform;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        platformTransform = GameObject.FindGameObjectWithTag("Platform").transform;
     }
 
     // Update is called once per frame
@@ -51,15 +55,16 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         if (rb == null) return;
-        Vector3 offset = movement * movementSpeed;
 
+        Vector3 offset = movement * movementSpeed;
+        // platform part
+        if (Vector3.Angle(platformTransform.up, Vector3.up) > 30)
+        {
+            offset = rb.velocity;
+        }
         if (movement.magnitude >= 0.01f)
         {
-            rb.velocity = offset;
-        }
-        else
-        {
-            rb.velocity = new Vector3(0f, 0f, 0f);
+            rb.velocity = new Vector3(offset.x, rb.velocity.y, offset.z);
         }
     }
 
