@@ -22,7 +22,10 @@ MonoBehaviour:
       - _typeNameAndAssembly: LoadSceneEP, Assembly-CSharp
     - _collection:
       - _typeNameAndAssembly: SceneLoadingProgressEP, Assembly-CSharp
+    - _collection:
+      - _typeNameAndAssembly: ResourceChangedEP, Assembly-CSharp
     _values:
     - _typeNameAndAssembly: ConcreteClass_eccf07a7327a1514e9225bcad014b038, GameEventWithParam_SceneChangedEP
     - _typeNameAndAssembly: ConcreteClass_7867a069d9ef8d045ac3d433e2e0a101, GameEventWithParam_LoadSceneEP
     - _typeNameAndAssembly: ConcreteClass_a3ed997b3a560e24f994c283674ba46a, GameEventWithParam_SceneLoadingProgressEP
+    - _typeNameAndAssembly: ConcreteClass_f015d5a49b74f1242941edecde00e50f, GameEventWithParam_ResourceChangedEP

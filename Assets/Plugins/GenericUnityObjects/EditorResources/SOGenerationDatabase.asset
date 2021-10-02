@@ -19,6 +19,8 @@ MonoBehaviour:
     _guid: cd6f9b1b249da7941aad9721ffd6cc8d
   - _typeNameAndAssembly: SceneLoadingProgressEP, Assembly-CSharp
     _guid: 6184977fdd9d5e64c9d146f7849e47ca
+  - _typeNameAndAssembly: ResourceChangedEP, Assembly-CSharp
+    _guid: 5ac5f5de219a71d42913d9bb449102c9
   _genericArgumentValues:
   - _array:
     - _arguments:
@@ -33,7 +35,17 @@ MonoBehaviour:
       - _typeNameAndAssembly: SceneLoadingProgressEP, Assembly-CSharp
         _guid: 6184977fdd9d5e64c9d146f7849e47ca
       _assemblyGUID: a3ed997b3a560e24f994c283674ba46a
+    - _arguments:
+      - _typeNameAndAssembly: ResourceChangedEP, Assembly-CSharp
+        _guid: 5ac5f5de219a71d42913d9bb449102c9
+      _assemblyGUID: f015d5a49b74f1242941edecde00e50f
   _genericTypeValues:
+  - _array:
+    - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
+      _guid: a94df4fc381636e4c90090e505a57574
+      AssemblyGUID: 
+      _argNames:
+      - T
   - _array:
     - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
       _guid: a94df4fc381636e4c90090e505a57574

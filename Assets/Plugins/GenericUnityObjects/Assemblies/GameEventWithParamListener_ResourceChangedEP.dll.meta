@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 7867a069d9ef8d045ac3d433e2e0a101
+guid: 26a393524ab4dca488b36ac12da55044
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
-  iconMap: {}
+  iconMap:
+    ConcreteClass_26a393524ab4dca488b36ac12da55044: {fileID: -8204150473280056172, guid: 0000000000000000d000000000000000, type: 0}
   executionOrder: {}
   defineConstraints: []
   isPreloaded: 0
