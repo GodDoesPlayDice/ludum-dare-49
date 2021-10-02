@@ -19,7 +19,22 @@ MonoBehaviour:
     _order: 52
   _afterReloadEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GenericUnityObjects.Editor.FailedAssembliesChecker,
+          GenericUnityObjects.Editor
+        m_MethodName: ReimportCreatedAssets
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   _savedData:
-    _keys: []
-    _values: []
+    _keys:
+    - FailedAssemblyGuids
+    _values:
+    - '{"Data":["5648b3bf797f156468a77465b8dc1745","4958474c0aff17d4eaef5a332a98e5b1","eccf07a7327a1514e9225bcad014b038","7867a069d9ef8d045ac3d433e2e0a101","a3ed997b3a560e24f994c283674ba46a"]}'
