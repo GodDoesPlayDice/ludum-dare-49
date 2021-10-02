@@ -709,7 +709,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 399720839132409011, guid: 411051556b18042ab86a16a3b8d94fa8, type: 3}
       propertyPath: m_Name
-      value: Player Haired
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1065038986990237193, guid: 411051556b18042ab86a16a3b8d94fa8, type: 3}
       propertyPath: m_RootOrder
