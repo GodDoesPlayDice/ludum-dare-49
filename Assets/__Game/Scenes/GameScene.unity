@@ -437,6 +437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 2990071236457985326, guid: 9135e5aa4f4e45b4987012e5d7d6628e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5078725345493108577, guid: 9135e5aa4f4e45b4987012e5d7d6628e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -600,13 +604,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020196116}
-  m_LocalRotation: {x: 0.53729963, y: 0, z: 0, w: 0.8433915}
-  m_LocalPosition: {x: 0, y: 8, z: -5}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 5, z: -6.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &2020196120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 161774908605895003, guid: ec3868d65cda943cbaf637f561aee49f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 161774908605895003, guid: ec3868d65cda943cbaf637f561aee49f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -660,7 +664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 161774908605895003, guid: ec3868d65cda943cbaf637f561aee49f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 161774908605895003, guid: ec3868d65cda943cbaf637f561aee49f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -827,7 +831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6560737565348422190, guid: e01d20df06c65470c9ec74a35e0b88cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6560737565348422190, guid: e01d20df06c65470c9ec74a35e0b88cf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -835,7 +839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6560737565348422190, guid: e01d20df06c65470c9ec74a35e0b88cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6560737565348422190, guid: e01d20df06c65470c9ec74a35e0b88cf, type: 3}
       propertyPath: m_LocalRotation.w
