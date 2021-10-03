@@ -32,4 +32,9 @@ public class ResourceHolder : MonoBehaviour
     {
         return type;
     }
+
+    public int GetValue()
+    {
+        return value;
+    }
 }
