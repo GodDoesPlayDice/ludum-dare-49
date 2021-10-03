@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             platformRotation = !platformRotation;
-            GameObject.FindGameObjectWithTag("Platform").GetComponent<PlatformController>().ToggleYRotation(platformRotation);
+            GameObject.FindGameObjectWithTag("Platform").GetComponent<PlatformController>().ToggleScale(platformRotation);
             ExecuteActionsIfAvailable();
         }
 
