@@ -127,6 +127,7 @@ Transform:
   - {fileID: 602439063016539699}
   - {fileID: 602439062366536873}
   - {fileID: 602439061864721171}
+  - {fileID: 123296354766138471}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,3 +203,48 @@ MonoBehaviour:
   currentValue: 10000
   maxChangePerTick: 0
   maxAdditionalFluct: 0
+--- !u!1 &4821279082647622086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 123296354766138471}
+  - component: {fileID: 2834930835627295745}
+  m_Layer: 0
+  m_Name: OperationTickEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &123296354766138471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821279082647622086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 602439062570039429}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2834930835627295745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821279082647622086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0049ab176e1275247b56d2cedd9f640d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickEvent: {fileID: 11400000, guid: 3550728101674cc4fa8ec60b38ff98a7, type: 2}
+  tickDeltaTime: 1
