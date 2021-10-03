@@ -107,7 +107,7 @@ public class PlotDrawer : MonoBehaviour
         var count = (plotYMinMax.y - plotYMinMax.x) / verticalStep + 1;
         for (int i = 0; i < count; i ++)
         {
-            for(int x = 0; x < texture.width; x ++)
+            for(int x = 0; x <= texture.width; x ++)
             {
                 var texturePos = PlotPosToTexturePos(new Vector2(x, plotYMinMax.x + i * verticalStep), plotYMinMax);
                 texture.SetPixel((int)texturePos.x, (int)texturePos.y, Color.black);
