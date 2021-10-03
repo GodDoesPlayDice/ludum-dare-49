@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -157,22 +157,12 @@ MonoBehaviour:
   loadingScreen: {fileID: 1814782799}
   sceneChangedEvent: {fileID: 11400000, guid: 536e88b175aa643478a1ded48109e666, type: 2}
   loadFirst:
-    scene: 1
-    sceneToUnload: 9999
-    showAfterLoad: 0
-    param: 
-    active: 0
-  loadAfter:
-  - scene: 2
-    sceneToUnload: 9999
-    showAfterLoad: 1
-    param: 
-    active: 0
-  - scene: 3
+    scene: 3
     sceneToUnload: 9999
     showAfterLoad: 0
     param: 
     active: 1
+  loadAfter: []
 --- !u!4 &168411984
 Transform:
   m_ObjectHideFlags: 0
