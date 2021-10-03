@@ -9,6 +9,15 @@ public class EconomicsController : MonoBehaviour
     private float tickDeltaTime = 1f;
 
     [SerializeField]
+    private float startValue = 10000f;
+
+    [SerializeField]
+    private int minBound = 1000;
+
+    [SerializeField]
+    private int maxBound = 20000;
+
+    [SerializeField]
     private int minTicksPeriod;
 
     [SerializeField]
@@ -24,6 +33,17 @@ public class EconomicsController : MonoBehaviour
     private List<ResourceEconomicController> resourceControllers;
 
     private float prevTime;
+
+    private void Start()
+    {
+        resourceControllers.ForEach(c => {
+            c.currentValue = startValue;
+            c.minMaxRange = new RangeInt(minBound, maxBound);
+            c.periodRange = new RangeInt(minTicksPeriod, maxTicksPeriod);
+            c.maxChangePerTick = maxChangePerTick;
+            c.maxAdditionalFluct = maxAdditionalFluct;
+        });
+    }
 
     void Update()
     {

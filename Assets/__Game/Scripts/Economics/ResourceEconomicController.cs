@@ -10,8 +10,7 @@ public class ResourceEconomicController : MonoBehaviour
     [SerializeField]
     private ResourceType type;
 
-    [SerializeField]
-    private float currentValue = 100;
+    public float currentValue;
 
     [HideInInspector]
     public RangeInt minMaxRange;
@@ -27,10 +26,12 @@ public class ResourceEconomicController : MonoBehaviour
 
     public void NextEconomicsTick()
     {
+        //Debug.Log("Cur: " + currentValue);
         if (ticksToNextChange == 0) {
             CalcCurrentDelta();
             ticksToNextChange = Random.Range(periodRange.start, periodRange.end + 1);
         }
+        ticksToNextChange--;
 
         currentValue = CalcCurrentFullValue();
         resourceChangedEvent.Raise(new ResourceChangedEP(currentValue));
@@ -39,13 +40,13 @@ public class ResourceEconomicController : MonoBehaviour
     // Full random in bounds
     private void CalcCurrentDelta()
     {
-        var minBound = Mathf.Max(minMaxRange.start, currentValue - maxChangePerTick);
-        var maxBound = Mathf.Max(minMaxRange.end, currentValue + maxChangePerTick);
-        currentDeltaPerTick = Random.Range(minBound, maxBound);
+        var minBound = Mathf.Min(currentValue - minMaxRange.start, maxChangePerTick);
+        var maxBound = Mathf.Min(minMaxRange.end - currentValue, maxChangePerTick);
+        currentDeltaPerTick = Random.Range(-minBound, maxBound);
     }
 
     private float CalcCurrentFullValue()
     {
-        return currentDeltaPerTick + Random.Range(-maxAdditionalFluct, maxAdditionalFluct);
+        return currentValue + currentDeltaPerTick + Random.Range(-maxAdditionalFluct, maxAdditionalFluct);
     }
 }

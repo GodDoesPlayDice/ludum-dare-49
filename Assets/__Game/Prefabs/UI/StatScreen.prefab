@@ -2117,6 +2117,10 @@ PrefabInstance:
       propertyPath: texture
       value: 
       objectReference: {fileID: 2800000, guid: b07b12060efc8314f8249d9160a3bdbe, type: 3}
+    - target: {fileID: 4647438572642974605, guid: 988314a5bd9677545836fee40f7ab831, type: 3}
+      propertyPath: verticalStep
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4647438572642974607, guid: 988314a5bd9677545836fee40f7ab831, type: 3}
       propertyPath: m_Name
       value: PlotController
@@ -2187,6 +2191,10 @@ PrefabInstance:
       propertyPath: texture
       value: 
       objectReference: {fileID: 2800000, guid: f96495b5af0bb024f91eda2468664743, type: 3}
+    - target: {fileID: 4647438572642974605, guid: 988314a5bd9677545836fee40f7ab831, type: 3}
+      propertyPath: verticalStep
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4647438572642974607, guid: 988314a5bd9677545836fee40f7ab831, type: 3}
       propertyPath: m_Name
       value: PlotController
@@ -2257,6 +2265,10 @@ PrefabInstance:
       propertyPath: texture
       value: 
       objectReference: {fileID: 2800000, guid: 5160911c9860bd342b7b5f0ffaa07d20, type: 3}
+    - target: {fileID: 4647438572642974605, guid: 988314a5bd9677545836fee40f7ab831, type: 3}
+      propertyPath: verticalStep
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4647438572642974607, guid: 988314a5bd9677545836fee40f7ab831, type: 3}
       propertyPath: m_Name
       value: PlotController

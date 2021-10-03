@@ -37,6 +37,7 @@ public class PlotDrawer : MonoBehaviour
     public void AddAndDraw(ResourceChangedEP param)
     {
         valuesHolder.Add(param.value);
+        //Debug.Log("Current: " + param.value);
         RedrawTexture();
     }
 
@@ -74,7 +75,7 @@ public class PlotDrawer : MonoBehaviour
 
     public void DrawLine(Vector2 p1, Vector2 p2, Color col)
     {
-        Debug.Log("DrawLine" + p1 + " " + p2);
+        //Debug.Log("DrawLine" + p1 + " " + p2);
         Vector2 t = p1;
         float frac = 1 / Mathf.Sqrt(Mathf.Pow(p2.x - p1.x, 2) + Mathf.Pow(p2.y - p1.y, 2));
         float ctr = 0;

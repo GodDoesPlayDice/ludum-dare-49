@@ -143,10 +143,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickDeltaTime: 1
+  startValue: 10000
+  minBound: 1000
+  maxBound: 20000
   minTicksPeriod: 2
   maxTicksPeriod: 6
-  maxChangePerTick: 10
-  maxAdditionalFluct: 5
+  maxChangePerTick: 500
+  maxAdditionalFluct: 100
   resourceControllers:
   - {fileID: 8162555986071229297}
   - {fileID: 2373511375394837817}
