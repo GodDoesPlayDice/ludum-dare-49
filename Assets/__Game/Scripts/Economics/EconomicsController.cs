@@ -9,11 +9,22 @@ public class EconomicsController : MonoBehaviour
     private float tickDeltaTime = 1f;
 
     [SerializeField]
+    private int minTicksPeriod;
+
+    [SerializeField]
+    private int maxTicksPeriod;
+
+    [SerializeField]
+    private int maxChangePerTick;
+
+    [SerializeField]
+    private int maxAdditionalFluct;
+
+    [SerializeField]
     private List<ResourceEconomicController> resourceControllers;
 
     private float prevTime;
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time - prevTime > tickDeltaTime)
