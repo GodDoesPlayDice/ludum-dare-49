@@ -30,12 +30,13 @@ public class PortfolioController : MonoBehaviour
         var moneyCost = CalcMoneyCost(operation.type, Mathf.Abs(operation.resourceCount));
 
         PortfolioChangedEP param;
+
         if (operation.resourceCount < 0)
         {
-            param = SellResourceAndGetEvent(holder, operation.resourceCount, moneyCost);
+            param = SellResourceAndGetEvent(holder, Mathf.Abs(operation.resourceCount), moneyCost);
         } else
         {
-            param = BuyResourceAndGetEvent(holder, operation.resourceCount, moneyCost);
+            param = BuyResourceAndGetEvent(holder, Mathf.Abs(operation.resourceCount), moneyCost);
         }
         portfolioChangedEvent.Raise(param);
     }
@@ -46,11 +47,14 @@ public class PortfolioController : MonoBehaviour
         var forRemoval = holder.HowManyCanRemove(resourceCount);
         if (forRemoval == resourceCount)
         {
+            //Debug.Log("Sell, true " + holder.GetValue());
             holder.Remove(resourceCount);
+            //Debug.Log("After " + holder.GetValue());
             money += moneyCost;
             result = new PortfolioChangedEP(holder.GetResourceType(), true, forRemoval * -1, moneyCost, holder.GetValue(), money);
         } else
         {
+            //Debug.Log("Sell, false");
             money -= moneyCost;
             result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, moneyCost * -1, holder.GetValue(), money);
         }
@@ -62,11 +66,13 @@ public class PortfolioController : MonoBehaviour
         PortfolioChangedEP result;
         if (money >= moneyCost)
         {
+            //Debug.Log("Buy, true");
             holder.Add(resourceCount);
             money -= moneyCost;
             result = new PortfolioChangedEP(holder.GetResourceType(), true, resourceCount, moneyCost * -1, holder.GetValue(), money);
         } else
         {
+            //Debug.Log("Buy, false");
             var resourceRemoved = holder.Remove(resourceCount);
             result = new PortfolioChangedEP(holder.GetResourceType(), false, resourceRemoved, 0, holder.GetValue(), money);
         }
