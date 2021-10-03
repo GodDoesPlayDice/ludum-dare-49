@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4185845606346144971}
   - component: {fileID: 2160847584309908062}
   - component: {fileID: 3780619579018316145}
+  - component: {fileID: 5889059829922289615}
   m_Layer: 5
   m_Name: NewsScreen
   m_TagString: Untagged
@@ -91,3 +92,31 @@ MonoBehaviour:
   newsTextController: {fileID: 438367844308073323, guid: 8d7ab7c200c85114c8cf3986b5ba7482, type: 3}
   itemDuration: 10
   defaultString: Here is Jonny!
+--- !u!114 &5889059829922289615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423884397747075263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2027194587, guid: 700ae246c0a334ba0a4d4e5a2a1a96b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: e260a7a192a54e040b7de89fe988a8c8, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3780619579018316145}
+        m_TargetAssemblyTypeName: NewsScreenController, Assembly-CSharp
+        m_MethodName: HandleHappening
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

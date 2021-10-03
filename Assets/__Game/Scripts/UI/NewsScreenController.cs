@@ -18,12 +18,19 @@ public class NewsScreenController : MonoBehaviour
     {
         width = GetComponent<RectTransform>().rect.width;
         pixelsPerSeconds = width / itemDuration;
-        AddNewsTextController(defaultString);
+        //AddNewsTextController(defaultString);
     }
 
     public void AddNewsTextController(string message) 
     {
         currentTextController = Instantiate(newsTextController, transform);
         currentTextController.Initialize(width, pixelsPerSeconds, message);
+    }
+
+    public void HandleHappening(HappeningEP param)
+    {
+        if (param.isOn) {
+            AddNewsTextController(param.happening.newsString);
+        }
     }
 }
