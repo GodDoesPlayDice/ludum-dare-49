@@ -112,13 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05902976cbfcd6b4caa12c7039547acb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textGoldCount: {fileID: 0}
-  textWoodCount: {fileID: 0}
-  textOilCount: {fileID: 0}
-  textAmount: {fileID: 0}
-  textGoldCurrent: {fileID: 0}
-  textWoodCurrent: {fileID: 0}
-  textOilCurrent: {fileID: 0}
+  textGoldCount: {fileID: 8482253713240523030}
+  textWoodCount: {fileID: 3250359704557849445}
+  textOilCount: {fileID: 6032260656780715594}
+  textAmount: {fileID: 1609929884923629119}
+  textGoldCurrent: {fileID: 4346578492304396074}
+  textWoodCurrent: {fileID: 2603267891237589399}
+  textOilCurrent: {fileID: 1525069090064252561}
 --- !u!1 &564648549769036428
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class StatScreenController : MonoBehaviour
 {
 
-    public Text textGoldCount;
-    public Text textWoodCount;
-    public Text textOilCount;
-    public Text textAmount;
+    public TextMeshProUGUI textGoldCount;
+    public TextMeshProUGUI textWoodCount;
+    public TextMeshProUGUI textOilCount;
+    public TextMeshProUGUI textAmount;
 
-    public Text textGoldCurrent;
-    public Text textWoodCurrent;
-    public Text textOilCurrent;
+    public TextMeshProUGUI textGoldCurrent;
+    public TextMeshProUGUI textWoodCurrent;
+    public TextMeshProUGUI textOilCurrent;
 
     //public Text textNews;
 
