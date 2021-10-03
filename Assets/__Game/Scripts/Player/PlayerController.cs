@@ -17,9 +17,6 @@ public class PlayerController : MonoBehaviour
     // platform
     private Transform platformTransform;
 
-    // test
-    private bool platformRotation = false;
-
     // audio
     private AudioSource audioSource;
 
@@ -52,8 +49,6 @@ public class PlayerController : MonoBehaviour
         // input for action
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            platformRotation = !platformRotation;
-            GameObject.FindGameObjectWithTag("Platform").GetComponent<PlatformController>().ToggleScale(platformRotation);
             ExecuteActionsIfAvailable();
         }
 

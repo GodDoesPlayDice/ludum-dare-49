@@ -6,5 +6,6 @@ public class HappeningEP : IGameEventParam
 {
     public HappeningType type { get; private set;}
     public HappeningEntity happening { get; private set; }
+    public bool isOn { get; private set; }
 
 }

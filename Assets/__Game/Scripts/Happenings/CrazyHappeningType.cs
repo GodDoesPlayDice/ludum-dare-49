@@ -4,5 +4,7 @@ using UnityEngine;
 
 public enum CrazyHappeningType
 {
-    
+    xzRotation,
+    yRotation,
+    scale,
 }

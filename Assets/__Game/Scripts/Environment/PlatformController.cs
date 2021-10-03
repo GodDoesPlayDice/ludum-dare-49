@@ -23,6 +23,14 @@ public class PlatformController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    public void OnHappening(HappeningEP happeningEP)
+    {
+        if (happeningEP.type != HappeningType.CRAZY) return;
+        if (happeningEP.happening.crazyType == CrazyHappeningType.scale) ToggleScale(happeningEP.isOn);
+        if (happeningEP.happening.crazyType == CrazyHappeningType.xzRotation) ToggleXZRotation(happeningEP.isOn);
+        if (happeningEP.happening.crazyType == CrazyHappeningType.yRotation) ToggleYRotation(happeningEP.isOn);
+    }
+
     private void FixedUpdate()
     {
         if (resetingRotation) ResetRotation();
@@ -36,7 +44,7 @@ public class PlatformController : MonoBehaviour
         }
     }
 
-    public void ToggleZXRotation(bool onOff)
+    public void ToggleXZRotation(bool onOff)
     {
         if (onOff)
         {
