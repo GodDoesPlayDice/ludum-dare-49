@@ -30,6 +30,8 @@ MonoBehaviour:
       - _typeNameAndAssembly: WorkerOperationEP, Assembly-CSharp
     - _collection:
       - _typeNameAndAssembly: PortfolioChangedEP, Assembly-CSharp
+    - _collection:
+      - _typeNameAndAssembly: HappeningEP, Assembly-CSharp
     _values:
     - _typeNameAndAssembly: ConcreteClass_eccf07a7327a1514e9225bcad014b038, GameEventWithParam_SceneChangedEP
     - _typeNameAndAssembly: ConcreteClass_7867a069d9ef8d045ac3d433e2e0a101, GameEventWithParam_LoadSceneEP
@@ -38,3 +40,4 @@ MonoBehaviour:
     - _typeNameAndAssembly: ConcreteClass_57813f0d9107d534d819ff97fa0cce9d, GameEventWithParam_WorkerTickEP
     - _typeNameAndAssembly: ConcreteClass_2e4d8e6e984e7134b8930e275c544fdf, GameEventWithParam_WorkerOperationEP
     - _typeNameAndAssembly: ConcreteClass_95b39608b5170a646a7fba8a54468c01, GameEventWithParam_PortfolioChangedEP
+    - _typeNameAndAssembly: ConcreteClass_c7a57c41f1bdd1249815860f71e5219b, GameEventWithParam_HappeningEP

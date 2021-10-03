@@ -21,9 +21,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GenericUnityObjects.Editor.MonoBehaviours.GenericBehaviourCreator,
+        m_TargetAssemblyTypeName: GenericUnityObjects.Editor.ScriptableObjects.GenericSOCreator,
           GenericUnityObjects.Editor
-        m_MethodName: FinishBehaviourCreation
+        m_MethodName: FinishSOCreationInteractively
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35,9 +35,9 @@ MonoBehaviour:
         m_CallState: 1
   _savedData:
     _keys:
-    - GameObject
-    - GenericBehaviourType
+    - GenericSOType
+    - FileName
     _values:
-    - '{"Data":{"instanceID":95972}}'
-    - '{"Data":{"GuidAssignmentFailed":false,"GUID":"8aa2f51c9e8249b4a888aef6b5573413","TypeNameAndAssembly":"GameEventWithParamListener`1[[PortfolioChangedEP,
+    - '{"Data":{"GuidAssignmentFailed":false,"GUID":"a94df4fc381636e4c90090e505a57574","TypeNameAndAssembly":"GameEventWithParam`1[[HappeningEP,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], Assembly-CSharp","_suppressLogs":false}}'
+    - '{"Data":"New GameEventWithParam`1"}'

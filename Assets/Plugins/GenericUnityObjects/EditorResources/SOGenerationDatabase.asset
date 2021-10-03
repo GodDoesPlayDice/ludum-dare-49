@@ -27,6 +27,8 @@ MonoBehaviour:
     _guid: 9ee53a177b6d52645a60c229a746b765
   - _typeNameAndAssembly: PortfolioChangedEP, Assembly-CSharp
     _guid: 763606e9a246d6b49af701c715f1be0b
+  - _typeNameAndAssembly: HappeningEP, Assembly-CSharp
+    _guid: 2f1d3c0cd6e4d1046a641876f838db25
   _genericArgumentValues:
   - _array:
     - _arguments:
@@ -57,7 +59,17 @@ MonoBehaviour:
       - _typeNameAndAssembly: PortfolioChangedEP, Assembly-CSharp
         _guid: 763606e9a246d6b49af701c715f1be0b
       _assemblyGUID: 95b39608b5170a646a7fba8a54468c01
+    - _arguments:
+      - _typeNameAndAssembly: HappeningEP, Assembly-CSharp
+        _guid: 2f1d3c0cd6e4d1046a641876f838db25
+      _assemblyGUID: c7a57c41f1bdd1249815860f71e5219b
   _genericTypeValues:
+  - _array:
+    - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
+      _guid: a94df4fc381636e4c90090e505a57574
+      AssemblyGUID: 
+      _argNames:
+      - T
   - _array:
     - _typeNameAndAssembly: GameEventWithParam`1, Assembly-CSharp
       _guid: a94df4fc381636e4c90090e505a57574
