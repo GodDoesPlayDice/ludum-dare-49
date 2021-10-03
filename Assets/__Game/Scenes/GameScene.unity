@@ -716,6 +716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hexagon-Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 6378654305195500475, guid: a9ad1bd1f0fe6426ca0fe96eba562229, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 6849747670421783634, guid: a9ad1bd1f0fe6426ca0fe96eba562229, type: 3}
       propertyPath: m_RootOrder
       value: 1

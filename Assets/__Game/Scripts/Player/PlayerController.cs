@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     // platform
     private Transform platformTransform;
 
+
+    // test
+    private bool platformRotation = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +30,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // writing variables for movement
+        // input for movement
         float zAxis = Input.GetAxis("Vertical");
         float xAxis = Input.GetAxis("Horizontal");
         movement = new Vector3(xAxis, 0, zAxis);
+
+        // input for action
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            platformRotation = !platformRotation;
+            GameObject.FindGameObjectWithTag("Platform").GetComponent<PlatformController>().ToggleRotation(platformRotation);
+        }
 
 
         // animation
@@ -55,13 +66,18 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         if (rb == null) return;
-
         Vector3 offset = movement * movementSpeed;
-        // platform part
-        if (Vector3.Angle(platformTransform.up, Vector3.up) > 30)
+
+        // no movement if platform is too inclined
+        if (platformTransform != null)
         {
-            offset = rb.velocity;
+            if (Vector3.Angle(platformTransform.up, Vector3.up) > 30)
+            {
+                offset = rb.velocity;
+            }
         }
+
+        // movement
         if (movement.magnitude >= 0.01f)
         {
             rb.velocity = new Vector3(offset.x, rb.velocity.y, offset.z);

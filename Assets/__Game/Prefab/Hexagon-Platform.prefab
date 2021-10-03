@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5711723119691120445}
   - component: {fileID: 6378654305195500475}
   - component: {fileID: 6378654305195500474}
+  - component: {fileID: 919132147836218010}
   m_Layer: 0
   m_Name: Hexagon-Platform
   m_TagString: Platform
@@ -95,7 +96,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6072226250791624424}
   serializedVersion: 2
-  m_Mass: 10000
+  m_Mass: 5000
   m_Drag: 0
   m_AngularDrag: 0.1
   m_UseGravity: 1
@@ -117,6 +118,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 2f3b5abc9955241b28dc266dd0399ae0, type: 3}
+--- !u!114 &919132147836218010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072226250791624424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be439820bcc6e497ea72f83b679a1118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &289177299386156725
 PrefabInstance:
   m_ObjectHideFlags: 0
