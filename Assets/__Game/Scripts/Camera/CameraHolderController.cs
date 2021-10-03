@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraHolderController : MonoBehaviour
 {
     public Vector3 positionOffset;
+    public float smoothForMovement = 0.01f;
 
     private Transform playerTransform;
     private Vector3 target;
@@ -21,7 +22,7 @@ public class CameraHolderController : MonoBehaviour
         {
             if (playerTransform.position.y > -3)
             {
-                target = Vector3.Lerp(transform.position, playerTransform.position + positionOffset, 0.01f);
+                target = Vector3.Lerp(transform.position, playerTransform.position + positionOffset, smoothForMovement);
                 transform.position = target;
             } else
             {
