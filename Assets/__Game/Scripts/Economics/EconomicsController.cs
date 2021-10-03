@@ -1,32 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EconomicsController : MonoBehaviour
 {
     [SerializeField]
-    private GameEventWithParam<ResourceChangedEP> goldChangedEvent;
+    private float tickDeltaTime = 1f;
+
     [SerializeField]
-    private GameEventWithParam<ResourceChangedEP> woodChangedEvent;
-    [SerializeField]
-    private GameEventWithParam<ResourceChangedEP> oilChangedEvent;
+    private List<ResourceEconomicController> resourceControllers;
 
     private float prevTime;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - prevTime > 0.2)
+        if (Time.time - prevTime > tickDeltaTime)
         {
             prevTime = Time.time;
-            goldChangedEvent.Raise(new ResourceChangedEP(Random.Range(0f, 400f)));
+            resourceControllers.ForEach(c => c.NextEconomicsTick());
         }
     }
-
-
 }
