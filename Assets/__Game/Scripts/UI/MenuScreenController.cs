@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class MenuScreenController : MonoBehaviour
 {
+    [SerializeField]
+    private GameEventWithParam<LoadSceneEP> loadSceneEvent;
+
     public void OnNewGameClick() {
-        // TODO OnnewGameClick
+        loadSceneEvent.Raise(new LoadSceneEP(SceneEnum.GAME, SceneEnum.TITLE, active: true));
     }
 }

@@ -9,5 +9,6 @@ public enum SceneEnum
     SHARED_DATA = 1,
     MUSIC = 2,
     TITLE = 3,
+    GAME = 4,
     NULL = 9999
 }
