@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,9 +17,15 @@ public class PlayerController : MonoBehaviour
     // platform
     private Transform platformTransform;
 
-
     // test
     private bool platformRotation = false;
+
+    [SerializeField]
+    private float distanceToActivate = 1.1f;
+
+    public Action action { private get; set; }
+
+    public List<ActionSource> actions;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +33,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         platformTransform = GameObject.FindGameObjectWithTag("Platform").transform;
+
+        actions = FindByType<ActionSource>();
     }
 
     // Update is called once per frame
@@ -40,6 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             platformRotation = !platformRotation;
             GameObject.FindGameObjectWithTag("Platform").GetComponent<PlatformController>().ToggleRotation(platformRotation);
+            ExecuteActionsIfAvailable();
         }
 
 
@@ -54,7 +65,6 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat("speed", 0);
             }
         }
-        
     }
 
     private void FixedUpdate()
@@ -90,5 +100,32 @@ public class PlayerController : MonoBehaviour
         {
             rb.MoveRotation(Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement, Vector3.up), 0.25f));
         }
+    }
+
+    public void ExecuteActionsIfAvailable()
+    {
+        
+        foreach (ActionSource source in actions)
+        {
+            if (Vector3.Distance(source.transform.position, transform.position) < distanceToActivate)
+            {
+                source.ExecuteAction();
+            }
+        }
+    }
+
+    public static List<T> FindByType<T>()
+    {
+        List<T> interfaces = new List<T>();
+        GameObject[] rootGameObjects = SceneManager.GetActiveScene().GetRootGameObjects();
+        foreach (var rootGameObject in rootGameObjects)
+        {
+            T[] childrenInterfaces = rootGameObject.GetComponentsInChildren<T>();
+            foreach (var childInterface in childrenInterfaces)
+            {
+                interfaces.Add(childInterface);
+            }
+        }
+        return interfaces;
     }
 }

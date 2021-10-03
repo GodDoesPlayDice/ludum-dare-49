@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public enum WorkerState
 {
@@ -9,7 +6,7 @@ public enum WorkerState
     buying
 }
 
-public class WorkerController : MonoBehaviour
+public class WorkerController : MonoBehaviour, ActionSource
 {
     public ResourceType resourceType;
     public GameEventWithParam<WorkerOperationEP> operationEvent;
@@ -18,6 +15,14 @@ public class WorkerController : MonoBehaviour
 
     private WorkerState state = WorkerState.buying;
 
+    /*
+    private PlayerController playerController;
+
+    private void Start()
+    {
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
+    */
 
     public void OnTick(WorkerTickEP workerTickEP)
     {
@@ -35,5 +40,13 @@ public class WorkerController : MonoBehaviour
         {
             state = WorkerState.selling;
         }
+
+        Debug.Log(resourceType + " set to " + state);
+    }
+
+    public void ExecuteAction()
+    {
+        var newState = state == WorkerState.selling ? WorkerState.buying : WorkerState.selling;
+        ToggleWorkerState(newState);
     }
 }

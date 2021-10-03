@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
+  distanceToActivate: 2.2
 --- !u!1 &452751061723058152
 GameObject:
   m_ObjectHideFlags: 0
