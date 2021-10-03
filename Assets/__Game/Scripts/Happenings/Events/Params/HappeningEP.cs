@@ -8,4 +8,10 @@ public class HappeningEP : IGameEventParam
     public HappeningEntity happening { get; private set; }
     public bool isOn { get; private set; }
 
+    public HappeningEP(HappeningType type, HappeningEntity happening, bool isOn)
+    {
+        this.type = type;
+        this.happening = happening;
+        this.isOn = isOn;
+    }
 }
