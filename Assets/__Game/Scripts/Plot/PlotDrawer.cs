@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlotDrawer : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PlotDrawer : MonoBehaviour
     [SerializeField]
     private PlotValuesHolder valuesHolder;
 
+    [SerializeField]
+    private Text textField;
+
     private float plotXMultiplier;
 
     private void Start()
@@ -37,6 +41,7 @@ public class PlotDrawer : MonoBehaviour
     public void AddAndDraw(ResourceChangedEP param)
     {
         valuesHolder.Add(param.value);
+        textField.text = Mathf.RoundToInt(param.value).ToString();
         //Debug.Log("Current: " + param.value);
         RedrawTexture();
     }
