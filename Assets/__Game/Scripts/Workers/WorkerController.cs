@@ -14,7 +14,7 @@ public class WorkerController : MonoBehaviour, ActionSource
     public int resourcesSellingMultiplier = 1;
 
     private WorkerState state = WorkerState.buying;
-
+    private AudioSource buySellAudioSource;
     /*
     private PlayerController playerController;
 
@@ -23,6 +23,10 @@ public class WorkerController : MonoBehaviour, ActionSource
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
     */
+    private void Start()
+    {
+        buySellAudioSource = GameObject.FindGameObjectWithTag("SellAndBuyAudio").GetComponent<AudioSource>();
+    }
 
     public void OnTick(WorkerTickEP workerTickEP)
     {
@@ -32,6 +36,12 @@ public class WorkerController : MonoBehaviour, ActionSource
     public void ToggleWorkerState(WorkerState newState)
     {
         if (state == newState) return;
+
+        //audio
+        if (buySellAudioSource != null)
+        {
+            buySellAudioSource.Play();
+        }
         if (state == WorkerState.selling)
         {
             state = WorkerState.buying;
