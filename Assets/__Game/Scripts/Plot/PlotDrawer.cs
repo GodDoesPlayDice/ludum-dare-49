@@ -51,22 +51,22 @@ public class PlotDrawer : MonoBehaviour
         var pixels = texture.GetPixels();
 
         SetPixelsToColor(pixels, blankColor);
-        texture.SetPixels(pixels);
 
         var values = valuesHolder.GetValues();
+
+        var plotYMinMax = CalcPlotYMinMax();
+        DrawValueLinesMeasureLines(plotYMinMax, pixels);
+
         for (int i = 0; i < values.Count - 1; i ++)
         {
 
             Vector2 v1 = new Vector2(i * step, values[i]);
             Vector2 v2 = new Vector2((i + 1) * step, values[i + 1]);
 
-            var plotYMinMax = CalcPlotYMinMax();
-
-            DrawValueLinesMeasureLines(plotYMinMax);
-
-            DrawLine(PlotPosToTexturePos(v1, plotYMinMax), PlotPosToTexturePos(v2, plotYMinMax), lineColor);
+            DrawLine(PlotPosToTexturePos(v1, plotYMinMax), PlotPosToTexturePos(v2, plotYMinMax), lineColor, pixels);
             //Debug.Log("DrawLine " + v1 + " " + v2);
         }
+        texture.SetPixels(pixels);
         texture.Apply();
     }
 
@@ -78,8 +78,7 @@ public class PlotDrawer : MonoBehaviour
         }
     }
 
-    // TODO: Should be made with SetPixels in batch
-    public void DrawLine(Vector2 p1, Vector2 p2, Color col)
+    public void DrawLine(Vector2 p1, Vector2 p2, Color col, Color[] pixels)
     {
         //Debug.Log("DrawLine" + p1 + " " + p2);
         Vector2 t = p1;
@@ -92,11 +91,16 @@ public class PlotDrawer : MonoBehaviour
             ctr += frac;
 
             // Very bold line
-            texture.SetPixel((int)t.x, (int)t.y, col);
-            texture.SetPixel((int)t.x, (int)t.y + 1, col);
-            texture.SetPixel((int)t.x, (int)t.y + 2, col);
-            texture.SetPixel((int)t.x, (int)t.y + 3, col);
+            SetPixelColor(pixels, col, (int)t.x, (int)t.y);
+            SetPixelColor(pixels, col, (int)t.x, (int)t.y + 1);
+            SetPixelColor(pixels, col, (int)t.x, (int)t.y + 2);
+            SetPixelColor(pixels, col, (int)t.x, (int)t.y + 3);
         }
+    }
+
+    private void SetPixelColor(Color[] pixels, Color color, int x, int y)
+    {
+        pixels[texture.width * y + x] = color;
     }
 
     private Vector2 PlotPosToTexturePos(Vector2 plotPos, Vector2 plotYMinMax)
@@ -112,7 +116,7 @@ public class PlotDrawer : MonoBehaviour
         return new Vector2(plotMin, plotMax);
     }
 
-    private void DrawValueLinesMeasureLines(Vector2 plotYMinMax)
+    private void DrawValueLinesMeasureLines(Vector2 plotYMinMax, Color[] pixels)
     {
         var count = (plotYMinMax.y - plotYMinMax.x) / verticalStep + 1;
         for (int i = 0; i < count; i ++)
@@ -120,8 +124,8 @@ public class PlotDrawer : MonoBehaviour
             for(int x = 0; x <= texture.width; x ++)
             {
                 var texturePos = PlotPosToTexturePos(new Vector2(x, plotYMinMax.x + i * verticalStep), plotYMinMax);
-                texture.SetPixel((int)texturePos.x, (int)texturePos.y, Color.gray);
-                texture.SetPixel((int)texturePos.x, (int)texturePos.y + 1, Color.gray);
+                SetPixelColor(pixels, Color.gray, (int)texturePos.x, (int)texturePos.y);
+                SetPixelColor(pixels, Color.gray, (int)texturePos.x, (int)texturePos.y + 1);
             } 
         }
     }
