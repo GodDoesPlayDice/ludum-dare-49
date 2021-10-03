@@ -13,12 +13,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 1
-  tickEvent:
+  operationEvent: {fileID: 11400000, guid: fd32b326bd524f64cafba22927f89ef4, type: 2}
+--- !u!114 &462340838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072226249320955425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed129a60fa89a24aafcfb8aa2918678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 3550728101674cc4fa8ec60b38ff98a7, type: 2}
+  response:
     m_PersistentCalls:
-      m_Calls: []
-  operationEvent:
-    m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462340837}
+        m_TargetAssemblyTypeName: WorkerController, Assembly-CSharp
+        m_MethodName: OnTick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!136 &1252050755
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -60,12 +83,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 2
-  tickEvent:
+  operationEvent: {fileID: 11400000, guid: fd32b326bd524f64cafba22927f89ef4, type: 2}
+--- !u!114 &330643403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072226250717894961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed129a60fa89a24aafcfb8aa2918678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 3550728101674cc4fa8ec60b38ff98a7, type: 2}
+  response:
     m_PersistentCalls:
-      m_Calls: []
-  operationEvent:
-    m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 330643402}
+        m_TargetAssemblyTypeName: WorkerController, Assembly-CSharp
+        m_MethodName: OnTick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!136 &1290440276
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -229,12 +275,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: 0
-  tickEvent:
+  operationEvent: {fileID: 11400000, guid: fd32b326bd524f64cafba22927f89ef4, type: 2}
+--- !u!114 &5745710765548578898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6072226251254300226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed129a60fa89a24aafcfb8aa2918678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 3550728101674cc4fa8ec60b38ff98a7, type: 2}
+  response:
     m_PersistentCalls:
-      m_Calls: []
-  operationEvent:
-    m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2117942856}
+        m_TargetAssemblyTypeName: WorkerController, Assembly-CSharp
+        m_MethodName: OnTick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &289177299386156725
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -421,14 +490,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e16e2f4ce9b547f6973013742390e92, type: 3}
---- !u!4 &6849747670479013323 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0e16e2f4ce9b547f6973013742390e92, type: 3}
-  m_PrefabInstance: {fileID: 6378654305180410400}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6072226250775486321 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e16e2f4ce9b547f6973013742390e92, type: 3}
+  m_PrefabInstance: {fileID: 6378654305180410400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6849747670479013323 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0e16e2f4ce9b547f6973013742390e92, type: 3}
   m_PrefabInstance: {fileID: 6378654305180410400}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6378654305637498248

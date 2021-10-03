@@ -12,10 +12,17 @@ public enum WorkerState
 public class WorkerController : MonoBehaviour
 {
     public ResourceType resourceType;
-    public UnityEvent tickEvent;
-    public UnityEvent operationEvent;
+    public GameEventWithParam<WorkerOperationEP> operationEvent;
+
 
     private WorkerState state = WorkerState.buying;
+
+
+    public void OnTick(WorkerTickEP workerTickEP)
+    {
+        operationEvent.Raise(new WorkerOperationEP(resourceType, state == WorkerState.buying ? 1 : -1));
+    }
+
     public void ToggleWorkerState(WorkerState newState)
     {
         if (state == newState) return;
