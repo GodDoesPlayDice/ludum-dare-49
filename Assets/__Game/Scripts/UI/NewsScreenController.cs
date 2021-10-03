@@ -8,7 +8,7 @@ public class NewsScreenController : MonoBehaviour
     public NewsTextController newsTextController;
     [Range(1f, 10f)]
     public float itemDuration = 3.0f;
-    public string[] filterItems;
+    public string defaultString;
 
     float width;
     float pixelsPerSeconds;
@@ -18,19 +18,10 @@ public class NewsScreenController : MonoBehaviour
     {
         width = GetComponent<RectTransform>().rect.width;
         pixelsPerSeconds = width / itemDuration;
-        AddNewsTextController(filterItems[0]);
+        AddNewsTextController(defaultString);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (currentTextController.GetXPosition <= -currentTextController.GetWidth) 
-        {
-            AddNewsTextController(filterItems[Random.Range(0, filterItems.Length)]);
-        }
-    }
-
-    void AddNewsTextController(string message) 
+    public void AddNewsTextController(string message) 
     {
         currentTextController = Instantiate(newsTextController, transform);
         currentTextController.Initialize(width, pixelsPerSeconds, message);

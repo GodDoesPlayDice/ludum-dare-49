@@ -89,8 +89,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newsTextController: {fileID: 438367844308073323, guid: 8d7ab7c200c85114c8cf3986b5ba7482, type: 3}
-  itemDuration: 3
-  filterItems:
-  - Hello
-  - How are you
-  - Google
+  itemDuration: 10
+  defaultString: Here is Jonny!
