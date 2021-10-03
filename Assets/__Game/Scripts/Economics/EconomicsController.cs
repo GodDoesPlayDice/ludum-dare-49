@@ -53,4 +53,9 @@ public class EconomicsController : MonoBehaviour
             resourceControllers.ForEach(c => c.NextEconomicsTick());
         }
     }
+
+    public float GetCurrentCost(ResourceType type)
+    {
+        return resourceControllers.Find(c => c.GetResourceType() == type).currentValue;
+    }
 }
