@@ -1342,7 +1342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: News!
+  m_Text: 'News! News! News! News! News!  News!News! News! News! News! News! News! '
 --- !u!1 &5762260570857740866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,7 +2013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000500500 $
+  m_Text: ' 120235235235 $'
 --- !u!1 &8089899902098498393
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,7 +2219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5899273672367007882, guid: a116a451ae60dc140a6af67fc8e257c3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 174.08492
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5899273672367007882, guid: a116a451ae60dc140a6af67fc8e257c3, type: 3}
       propertyPath: m_SizeDelta.y
