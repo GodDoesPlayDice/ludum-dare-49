@@ -73,6 +73,7 @@ public class PlotDrawer : MonoBehaviour
         }
     }
 
+    // TODO: Should be made with SetPixels in batch
     public void DrawLine(Vector2 p1, Vector2 p2, Color col)
     {
         //Debug.Log("DrawLine" + p1 + " " + p2);
@@ -84,8 +85,12 @@ public class PlotDrawer : MonoBehaviour
         {
             t = Vector2.Lerp(p1, p2, ctr);
             ctr += frac;
+
+            // Very bold line
             texture.SetPixel((int)t.x, (int)t.y, col);
-            
+            texture.SetPixel((int)t.x, (int)t.y + 1, col);
+            texture.SetPixel((int)t.x, (int)t.y + 2, col);
+            texture.SetPixel((int)t.x, (int)t.y + 3, col);
         }
     }
 
@@ -110,7 +115,8 @@ public class PlotDrawer : MonoBehaviour
             for(int x = 0; x <= texture.width; x ++)
             {
                 var texturePos = PlotPosToTexturePos(new Vector2(x, plotYMinMax.x + i * verticalStep), plotYMinMax);
-                texture.SetPixel((int)texturePos.x, (int)texturePos.y, Color.black);
+                texture.SetPixel((int)texturePos.x, (int)texturePos.y, Color.gray);
+                texture.SetPixel((int)texturePos.x, (int)texturePos.y + 1, Color.gray);
             } 
         }
     }
