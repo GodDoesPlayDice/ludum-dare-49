@@ -25,7 +25,7 @@ public class PlatformController : MonoBehaviour
         if (onOff)
         {
             resetingRotation = false;
-            rb.constraints = RigidbodyConstraints.FreezePosition;
+            rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotationY;
         } else
         {
             resetingRotation = true;
