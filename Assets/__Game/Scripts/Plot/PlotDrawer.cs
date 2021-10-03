@@ -50,7 +50,7 @@ public class PlotDrawer : MonoBehaviour
     {
         var pixels = texture.GetPixels();
 
-        SetPixelsToColor(pixels, blankColor);
+        SetAllPixelsColor(pixels, blankColor);
 
         var values = valuesHolder.GetValues();
 
@@ -70,7 +70,7 @@ public class PlotDrawer : MonoBehaviour
         texture.Apply();
     }
 
-    public void SetPixelsToColor(Color[] pixels, Color color)
+    public void SetAllPixelsColor(Color[] pixels, Color color)
     {
         for (var i = 0; i < pixels.Length; ++i)
         {
@@ -100,7 +100,10 @@ public class PlotDrawer : MonoBehaviour
 
     private void SetPixelColor(Color[] pixels, Color color, int x, int y)
     {
-        pixels[texture.width * y + x] = color;
+        var ind = texture.width * y + x;
+        if (ind >= 0 && ind < pixels.Length) {
+            pixels[ind] = color;
+        }
     }
 
     private Vector2 PlotPosToTexturePos(Vector2 plotPos, Vector2 plotYMinMax)

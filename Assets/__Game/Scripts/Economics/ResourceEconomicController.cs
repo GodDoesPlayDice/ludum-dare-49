@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceEconomicController : MonoBehaviour
@@ -33,8 +31,21 @@ public class ResourceEconomicController : MonoBehaviour
         }
         ticksToNextChange--;
 
-        currentValue = CalcCurrentFullValue();
+        var currentFullValue = CalcCurrentFullValue();
+        if (currentFullValue >= 0)
+        {
+            currentValue = CalcCurrentFullValue();
+        }
+        else
+        {
+            ticksToNextChange = 0;
+        }
         resourceChangedEvent.Raise(new ResourceChangedEP(currentValue));
+    }
+
+    public ResourceType GetResourceType()
+    {
+        return type;
     }
 
     // Full random in bounds
