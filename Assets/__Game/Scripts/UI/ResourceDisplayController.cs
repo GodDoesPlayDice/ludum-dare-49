@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Globalization;
+using System.Text;
 
 public class ResourceDisplayController : MonoBehaviour
 {
@@ -17,8 +19,12 @@ public class ResourceDisplayController : MonoBehaviour
 
     public void HandlePortfolioChanged(PortfolioChangedEP param)
     {
+
+        var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+        nfi.NumberGroupSeparator = " ";
+
         SetResourceText(param.type, param.currentResource);
-        moneyText.text = param.currentMoney.ToString() + " $";
+        moneyText.text = param.currentMoney.ToString("#,0.00 $", nfi);
     }
 
     // !!!!!
