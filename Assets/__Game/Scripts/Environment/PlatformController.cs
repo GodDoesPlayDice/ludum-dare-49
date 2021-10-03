@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
+    public float yRotationSpeed = 5;
+
     private Rigidbody rb;
     private bool resetingRotation = true;
     // Start is called before the first frame update
@@ -20,7 +22,7 @@ public class PlatformController : MonoBehaviour
         }
     }
 
-    public void ToggleRotation(bool onOff)
+    public void ToggleZXRotation(bool onOff)
     {
         if (onOff)
         {
@@ -29,6 +31,22 @@ public class PlatformController : MonoBehaviour
         } else
         {
             resetingRotation = true;
+        }
+    }
+
+    public void ToggleYRotation(bool onOff)
+    {
+        if (onOff)
+        {
+            resetingRotation = false;
+            rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+            rb.angularVelocity = new Vector3(rb.angularVelocity.x, yRotationSpeed, rb.angularVelocity.z);
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+            rb.angularVelocity = Vector3.zero;
+            //resetingRotation = true;
         }
 
     }
