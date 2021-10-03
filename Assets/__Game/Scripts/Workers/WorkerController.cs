@@ -13,14 +13,15 @@ public class WorkerController : MonoBehaviour
 {
     public ResourceType resourceType;
     public GameEventWithParam<WorkerOperationEP> operationEvent;
-
+    public int resourcesBuyingMultiplier = 1;
+    public int resourcesSellingMultiplier = 1;
 
     private WorkerState state = WorkerState.buying;
 
 
     public void OnTick(WorkerTickEP workerTickEP)
     {
-        operationEvent.Raise(new WorkerOperationEP(resourceType, state == WorkerState.buying ? 1 : -1));
+        operationEvent.Raise(new WorkerOperationEP(resourceType, state == WorkerState.buying ? 1 * resourcesBuyingMultiplier : -1 * resourcesSellingMultiplier));
     }
 
     public void ToggleWorkerState(WorkerState newState)
