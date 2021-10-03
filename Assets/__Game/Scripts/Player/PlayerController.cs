@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     // test
     private bool platformRotation = false;
 
+    // audio
+    private AudioSource audioSource;
+
     [SerializeField]
     private float distanceToActivate = 1.1f;
 
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         platformTransform = GameObject.FindGameObjectWithTag("Platform").transform;
+        audioSource = GetComponent<AudioSource>();
 
         actions = FindByType<ActionSource>();
     }
@@ -63,6 +67,25 @@ public class PlayerController : MonoBehaviour
             } else
             {
                 animator.SetFloat("speed", 0);
+            }
+        }
+
+        // sound
+        if (new Vector2(rb.velocity.x, rb.velocity.z).magnitude >= 2f)
+        {
+            //play footsteps sound
+            audioSource.pitch = UnityEngine.Random.Range(0.8f, 1f);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            //stop footsteps sound
+            if (audioSource.isPlaying)
+            {
+                audioSource.Pause();
             }
         }
     }
