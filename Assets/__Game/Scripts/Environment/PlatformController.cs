@@ -35,7 +35,7 @@ public class PlatformController : MonoBehaviour
 
     private void ResetRotation()
     {
-        rb.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, Vector3.up), 0.2f));
+        rb.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, Vector3.up), 0.18f));
 
         if (Vector3.Angle(transform.up, Vector3.up) <= 3)
         {

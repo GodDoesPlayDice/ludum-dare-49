@@ -160,5 +160,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc245b5de6fc54519a663614f8ce33d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionOffset: {x: 0, y: 6, z: -6.4}
-  smoothForMovement: 0.03
+  positionOffset: {x: 0, y: 6, z: -6}
+  smoothForMovement: 0.045

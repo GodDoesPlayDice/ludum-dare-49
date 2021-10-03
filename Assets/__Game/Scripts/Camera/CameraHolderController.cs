@@ -23,6 +23,7 @@ public class CameraHolderController : MonoBehaviour
             if (playerTransform.position.y > -3)
             {
                 target = Vector3.Lerp(transform.position, playerTransform.position + positionOffset, smoothForMovement);
+                target.x = target.x/1.3f;
                 transform.position = target;
             } else
             {
