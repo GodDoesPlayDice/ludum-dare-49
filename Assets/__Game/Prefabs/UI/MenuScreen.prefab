@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2652413827949650210}
   - component: {fileID: 8497532930469448346}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImageDescriptionBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,12 +31,12 @@ RectTransform:
   m_Children:
   - {fileID: 5576049758340318348}
   m_Father: {fileID: 1460093547452559291}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 600}
+  m_SizeDelta: {x: 740, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2652413827949650210
 CanvasRenderer:
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8831537961679023458}
   - component: {fileID: 2411572692433408268}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextNewGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 8735470523035145489}
   - component: {fileID: 2451593037358914888}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -365,8 +365,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_Font: {fileID: 12800000, guid: 998d3a3efa7866a4db64fbadc1f2b635, type: 3}
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -428,11 +428,11 @@ RectTransform:
   m_Children:
   - {fileID: 60370295958654819}
   m_Father: {fileID: 1460093547452559291}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -420}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 600, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8327691524741259550
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 702775049742567630}
   - component: {fileID: 3262428765453361999}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,8 +655,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5222269995324804342}
-  - {fileID: 8967970181467358449}
   - {fileID: 4391216496767953504}
+  - {fileID: 8967970181467358449}
   m_Father: {fileID: 3559305278442938876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
