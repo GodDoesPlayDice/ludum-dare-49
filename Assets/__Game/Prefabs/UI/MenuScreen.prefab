@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3969d5eb1edbb1e4c9aea6022664bdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadSceneEvent: {fileID: 11400000, guid: 374c666e88658a64eb05b90ef6fa51be, type: 2}
 --- !u!1 &7600659121982069055
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,10 +392,10 @@ MonoBehaviour:
 
     Good luck not going bankrupt!
 
-    Use WASD
+    Use <b>WASD</b>
     keys to move.
 
-    Use Space key to interact.'
+    Use <b>Space</b> key to interact.'
 --- !u!1 &7939965515589984935
 GameObject:
   m_ObjectHideFlags: 0
