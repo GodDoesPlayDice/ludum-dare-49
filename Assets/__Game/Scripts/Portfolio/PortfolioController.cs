@@ -48,11 +48,11 @@ public class PortfolioController : MonoBehaviour
         {
             holder.Remove(resourceCount);
             money += moneyCost;
-            result = new PortfolioChangedEP(holder.GetResourceType(), true, resourceCount * -1, moneyCost);
+            result = new PortfolioChangedEP(holder.GetResourceType(), true, forRemoval * -1, moneyCost, holder.GetValue(), money);
         } else
         {
             money -= moneyCost;
-            result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, moneyCost * -1);
+            result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, moneyCost * -1, holder.GetValue(), money);
         }
         return result;
     }
@@ -64,11 +64,11 @@ public class PortfolioController : MonoBehaviour
         {
             holder.Add(resourceCount);
             money -= moneyCost;
-            result = new PortfolioChangedEP(holder.GetResourceType(), true, resourceCount, moneyCost * -1);
+            result = new PortfolioChangedEP(holder.GetResourceType(), true, resourceCount, moneyCost * -1, holder.GetValue(), money);
         } else
         {
-            holder.Remove(resourceCount);
-            result = new PortfolioChangedEP(holder.GetResourceType(), false, resourceCount, 0);
+            var resourceRemoved = holder.Remove(resourceCount);
+            result = new PortfolioChangedEP(holder.GetResourceType(), false, resourceRemoved, 0, holder.GetValue(), money);
         }
         return result;
     }
