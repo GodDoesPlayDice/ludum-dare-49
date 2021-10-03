@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
+    // y rotation
     public float yRotationSpeed = 5;
+
+    // scale
+    public float maxScaleMultiplier = 3;
+    public float scaleSmooth = 0.1f;
+
+    // zx rotation
 
     private Rigidbody rb;
     private bool resetingRotation = true;
+    private bool resetingScale = true;
+    private bool growingScale = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +25,14 @@ public class PlatformController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (resetingRotation)
+        if (resetingRotation) ResetRotation();
+        if (resetingScale)
         {
-            ResetRotation();
+            ResetScale();
+        }
+        if (growingScale)
+        {
+            GrowScale();
         }
     }
 
@@ -28,7 +42,8 @@ public class PlatformController : MonoBehaviour
         {
             resetingRotation = false;
             rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotationY;
-        } else
+        }
+        else
         {
             resetingRotation = true;
         }
@@ -48,7 +63,44 @@ public class PlatformController : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             //resetingRotation = true;
         }
+    }
 
+    public void ToggleScale(bool onOff)
+    {
+        if (onOff)
+        {
+            resetingScale = false;
+            growingScale = true;
+        }
+        else
+        {
+            resetingScale = true;
+            growingScale = false;
+        }
+    }
+
+    private void ResetScale()
+    {
+        if (transform.localScale.magnitude <= Vector3.one.magnitude)
+        {
+            transform.localScale = Vector3.one;
+            resetingScale = false;
+            growingScale = false;
+            return;
+        }
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, scaleSmooth);
+    }
+
+    private void GrowScale()
+    {
+        Vector3 target = Vector3.one * maxScaleMultiplier;
+        if (transform.localScale.magnitude >= target.magnitude)
+        {
+            transform.localScale = target;
+            growingScale = false;
+            return;
+        }
+        transform.localScale = Vector3.Lerp(transform.localScale, target, scaleSmooth);
     }
 
     private void ResetRotation()
