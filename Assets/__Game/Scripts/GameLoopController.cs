@@ -17,10 +17,10 @@ public class GameLoopController : MonoBehaviour
     {
         if (gameOverEP.success)
         {
-            failAudioSource.Play();
+            winAudioSource.Play();
         } else
         {
-            winAudioSource.Play();
+            failAudioSource.Play();
         }
 
         musicAudioSource.volume = 0.3f;
