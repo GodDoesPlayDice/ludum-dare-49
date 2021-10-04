@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 446.29}
+  m_SizeDelta: {x: 0, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2652413827949650210
 CanvasRenderer:
@@ -378,24 +378,30 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '>Do you want a stable job?
+  m_Text: 'Do you want a stable job?
 
-    >We don''t have much of that here.
+    We don''t have much of that here.
 
-    >Try
+    Try
     trading on our exchange.
 
-    >You can buy or sell three resources.
+    You can buy or sell three resources.
 
-    >Sometimes
+    Sometimes
     things can become "unstable".
 
-    >Good luck not going bankrupt!
+    Your goal is to make a million dollars!
 
-    >Use <b>WASD</b>
-    keys to move.
+    Use
+    <b>WASD</b> keys to move.
 
-    >Use <b>Space</b> key to interact.'
+    Use <b>Arrow Up</b> key to buy.
+
+    Use <b>Arrow
+    Down</b> key to sell.
+
+
+    Good luck not going bankrupt!'
 --- !u!1 &7939965515589984935
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 170}
+  m_AnchoredPosition: {x: 0, y: 125}
   m_SizeDelta: {x: 778.9, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8327691524741259550
