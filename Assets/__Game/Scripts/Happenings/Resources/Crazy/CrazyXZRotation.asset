@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crazyType: 0
   resourceTypes: 
-  newsString: The situation on the exchange is unstable! All players are advised
-    not to slow down!
+  newsString: <color=#57FEFF>The situation on the exchange is unstable! All players
+    are advised not to slow down!</color>
   stockPercent: 0

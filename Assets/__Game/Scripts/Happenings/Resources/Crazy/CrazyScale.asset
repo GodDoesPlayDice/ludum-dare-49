@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crazyType: 2
   resourceTypes: 
-  newsString: There are signs of uncontrolled growth on the stock exchange!
+  newsString: <color=#57FEFF>There are signs of uncontrolled growth on the stock
+    exchange!</color>
   stockPercent: 0

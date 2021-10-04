@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crazyType: 1
   resourceTypes: 
-  newsString: The innovations presented at the world exhibition turned the heads
-    of the players on the stock exchange!
+  newsString: <color=#57FEFF>The innovations presented at the world exhibition turned
+    the heads of the players on the stock exchange!</color>
   stockPercent: 0
