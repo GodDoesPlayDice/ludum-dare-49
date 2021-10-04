@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,9 +21,13 @@ public class DeadScreenController : MonoBehaviour
     private Text oilEl;
     [SerializeField]
     private Text moneyEl;
+    [SerializeField]
+    private Button continueButton;
 
     [SerializeField]
     private PortfolioController portfolio;
+
+    private Action continueCallback;
 
     public void OnNewGameClick() 
     {
@@ -30,11 +35,25 @@ public class DeadScreenController : MonoBehaviour
         SceneManager.LoadScene((int) SceneEnum.GAME);
     }
 
+    public void OnContinueClick()
+    {
+        if (continueCallback != null)
+        {
+            continueCallback();
+        }
+    }
+
+    public void SetContuinueCallback(Action continueCallback)
+    {
+        this.continueCallback = continueCallback;
+    }
+
     public void SetDeadScreenData(bool won, string title, string description)
     {
         titleEl.text = title;
         descriptionEl.text = description;
         FillGoodsValues();
+        continueButton.gameObject.SetActive(won);
     }
 
     private void FillGoodsValues()
