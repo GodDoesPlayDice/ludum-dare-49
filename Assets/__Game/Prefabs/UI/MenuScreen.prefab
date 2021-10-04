@@ -388,7 +388,7 @@ MonoBehaviour:
     You can buy or sell three resources.
 
     Sometimes
-    things can become "unstable".
+    market can become "unstable".
 
     Your goal is to make a million dollars!
 
@@ -401,7 +401,8 @@ MonoBehaviour:
     Down</b> key to sell.
 
 
-    Good luck not going bankrupt!'
+    Good luck not going bankrupt! And remember to pay
+    <color=red>taxes</color>!'
 --- !u!1 &7939965515589984935
 GameObject:
   m_ObjectHideFlags: 0
