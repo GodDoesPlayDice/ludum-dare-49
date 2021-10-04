@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         // animation
         if (animator != null)
         {
-            if (movement.magnitude >= 0.1f)
+            if (rb.velocity.magnitude >= 0.2f)
             {
                 animator.SetFloat("speed", movement.magnitude);
             } else
@@ -187,5 +187,6 @@ public class PlayerController : MonoBehaviour
     public void Mute()
     {
         audioSource.volume = 0;
+        audioSource.Stop();
     }
 }
