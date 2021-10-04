@@ -17,13 +17,21 @@ public class ResourceDisplayController : MonoBehaviour
     [SerializeField]
     private Text moneyText;
 
+    [SerializeField]
+    private SlidingTextController slidingText;
+
     public void HandlePortfolioChanged(PortfolioChangedEP param)
     {
-        var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
-        nfi.NumberGroupSeparator = " ";
-
         SetResourceText(param.type, param.currentResource);
-        moneyText.text = param.currentMoney.ToString("#,0.00 $", nfi);
+        moneyText.text = formatMoney(param.currentMoney);
+    }
+
+    public void HandleTaxes(TaxesEP param)
+    {
+        moneyText.text = formatMoney(param.currentMoney);
+        var instance = Instantiate(slidingText, moneyText.transform);
+        instance.transform.position = moneyText.transform.position;
+        instance.Init(false, "Taxes: -" + formatMoney(param.amount));
     }
 
     // !!!!!
@@ -39,5 +47,12 @@ public class ResourceDisplayController : MonoBehaviour
         {
             oilText.text = value.ToString();
         }
+    }
+
+    private string formatMoney(int money)
+    {
+        var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+        nfi.NumberGroupSeparator = " ";
+        return money.ToString("#,0.00 $", nfi);
     }
 }

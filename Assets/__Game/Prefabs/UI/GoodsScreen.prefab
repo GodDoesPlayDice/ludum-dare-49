@@ -1088,6 +1088,10 @@ PrefabInstance:
       propertyPath: moneyText
       value: 
       objectReference: {fileID: 2954822939899030593}
+    - target: {fileID: 610880302666834823, guid: a116a451ae60dc140a6af67fc8e257c3, type: 3}
+      propertyPath: slidingText
+      value: 
+      objectReference: {fileID: 8306629205628846603, guid: 559f7ed9f07931b48b192cce781b797f, type: 3}
     - target: {fileID: 5899273672367007882, guid: a116a451ae60dc140a6af67fc8e257c3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

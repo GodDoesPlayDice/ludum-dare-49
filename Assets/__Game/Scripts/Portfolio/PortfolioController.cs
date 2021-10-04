@@ -44,6 +44,17 @@ public class PortfolioController : MonoBehaviour
         portfolioChangedEvent.Raise(param);
     }
 
+    // !!!!!
+    public void RemoveTaxesMoney(int amount)
+    {
+        money -= amount;
+    }
+
+    public int GetCurrentMoney()
+    {
+        return money;
+    }
+
     private PortfolioChangedEP SellResourceAndGetEvent(ResourceHolder holder, int resourceCount, int moneyCost)
     {
         PortfolioChangedEP result;
