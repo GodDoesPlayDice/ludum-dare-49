@@ -6,14 +6,14 @@ public enum WorkerState
     buying
 }
 
-public class WorkerController : MonoBehaviour, ActionSource
+public class WorkerController : MonoBehaviour, UpDownActionSource
 {
     public ResourceType resourceType;
     public GameEventWithParam<WorkerOperationEP> operationEvent;
     public int resourcesBuyingMultiplier = 1;
     public int resourcesSellingMultiplier = 1;
 
-    private WorkerState state = WorkerState.buying;
+    //private WorkerState state = WorkerState.buying;
     private AudioSource buySellAudioSource;
     /*
     private PlayerController playerController;
@@ -30,9 +30,10 @@ public class WorkerController : MonoBehaviour, ActionSource
 
     public void OnTick(WorkerTickEP workerTickEP)
     {
-        operationEvent.Raise(new WorkerOperationEP(resourceType, state == WorkerState.buying ? 1 * resourcesBuyingMultiplier : -1 * resourcesSellingMultiplier));
+        //operationEvent.Raise(new WorkerOperationEP(resourceType, state == WorkerState.buying ? 1 * resourcesBuyingMultiplier : -1 * resourcesSellingMultiplier));
     }
 
+    /*
     public void ToggleWorkerState(WorkerState newState)
     {
         if (state == newState) return;
@@ -53,10 +54,16 @@ public class WorkerController : MonoBehaviour, ActionSource
 
         Debug.Log(resourceType + " set to " + state);
     }
+    */
 
-    public void ExecuteAction()
+    public void ExecuteAction(PlayerActionType type)
     {
-        var newState = state == WorkerState.selling ? WorkerState.buying : WorkerState.selling;
-        ToggleWorkerState(newState);
+        if (type == PlayerActionType.UP) {
+            operationEvent.Raise(new WorkerOperationEP(resourceType, resourcesBuyingMultiplier));
+        } else
+        {
+            operationEvent.Raise(new WorkerOperationEP(resourceType, resourcesSellingMultiplier * -1));
+        }
+        buySellAudioSource.Play();
     }
 }
