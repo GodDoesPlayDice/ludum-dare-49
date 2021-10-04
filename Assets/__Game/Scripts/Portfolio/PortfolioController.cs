@@ -12,6 +12,8 @@ public class PortfolioController : MonoBehaviour
     private EconomicsController economics;
     [SerializeField]
     private GameEventWithParam<PortfolioChangedEP> portfolioChangedEvent;
+    [SerializeField]
+    private GameOverEvent gameOverEvent;
 
     [SerializeField]
     private AudioSource buyAudioSource;
@@ -56,6 +58,10 @@ public class PortfolioController : MonoBehaviour
     public void RemoveTaxesMoney(int amount)
     {
         money -= amount;
+        if (money < 0)
+        {
+            gameOverEvent.Raise(new GameOverEP(false, "You are bunkrupt!", "Tax office took all your investments, your house and your tie to pay off a debt.\n You should pay taxes on time!"));
+        }
     }
 
     public int GetCurrentMoney()

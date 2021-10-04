@@ -144,6 +144,7 @@ MonoBehaviour:
   - {fileID: 2117835585328997460}
   economics: {fileID: 0}
   portfolioChangedEvent: {fileID: 11400000, guid: 789a5a5bc8ff81341a6f1ca6057a048f, type: 2}
+  gameOverEvent: {fileID: 11400000, guid: 709ff2deb78137a45b187c5c74806d6c, type: 2}
   buyAudioSource: {fileID: 0}
   sellAudioSource: {fileID: 0}
   noMoneyAudioSource: {fileID: 0}
