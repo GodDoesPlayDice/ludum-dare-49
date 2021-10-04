@@ -1120,7 +1120,7 @@ PrefabInstance:
     - target: {fileID: 6192762630730659445, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
       propertyPath: eventForListen
       value: 
-      objectReference: {fileID: 11400000, guid: 79c3f0557fa158a4c8c9b90cc3f4eeed, type: 2}
+      objectReference: {fileID: 11400000, guid: 544048d62eab478419e59c84e4dc588a, type: 2}
     - target: {fileID: 7775368518292903121, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
       propertyPath: m_IsActive
       value: 0

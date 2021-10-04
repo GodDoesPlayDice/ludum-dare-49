@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crazyType: 0
   resourceTypes: 01000000
-  newsString: The world is getting rid of plastic. The demand for <b>natural materials</b>
-    is growing
+  newsString: The world is getting rid of plastic. The demand for <color=#513B1C><b>natural
+    materials</b></color> is <color=#008000>growing</color>!
   stockPercent: 5
