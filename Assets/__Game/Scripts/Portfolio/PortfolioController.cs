@@ -21,7 +21,10 @@ public class PortfolioController : MonoBehaviour
         foreach (ResourceHolder h in resourceHolders)
         {
             holdersMap.Add(h.GetResourceType(), h);
+            portfolioChangedEvent.Raise(new PortfolioChangedEP(h.GetResourceType(), true, 0, 0, h.GetValue(), money));
         }
+
+
     }
 
     public void HandleWorkerOperation(WorkerOperationEP operation)
@@ -55,8 +58,8 @@ public class PortfolioController : MonoBehaviour
         } else
         {
             //Debug.Log("Sell, false");
-            money -= moneyCost;
-            result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, moneyCost * -1, holder.GetValue(), money);
+            //money -= moneyCost;
+            result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, 0, holder.GetValue(), money);
         }
         return result;
     }
@@ -73,8 +76,8 @@ public class PortfolioController : MonoBehaviour
         } else
         {
             //Debug.Log("Buy, false");
-            var resourceRemoved = holder.Remove(resourceCount);
-            result = new PortfolioChangedEP(holder.GetResourceType(), false, resourceRemoved, 0, holder.GetValue(), money);
+            //var resourceRemoved = holder.Remove(resourceCount);
+            result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, 0, holder.GetValue(), money);
         }
         return result;
     }

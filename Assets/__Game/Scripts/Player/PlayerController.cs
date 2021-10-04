@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public Action action { private get; set; }
 
-    public List<ActionSource> actions;
+    public List<UpDownActionSource> actions;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         platformTransform = GameObject.FindGameObjectWithTag("Platform").transform;
         audioSource = GetComponent<AudioSource>();
 
-        actions = FindByType<ActionSource>();
+        actions = FindByType<UpDownActionSource>();
     }
 
     // Update is called once per frame
@@ -49,7 +49,16 @@ public class PlayerController : MonoBehaviour
         // input for action
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ExecuteActionsIfAvailable();
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            ExecuteActionsIfAvailable(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            ExecuteActionsIfAvailable(false);
         }
 
 
@@ -120,14 +129,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void ExecuteActionsIfAvailable()
+    public void ExecuteActionsIfAvailable(bool down)
     {
         
-        foreach (ActionSource source in actions)
+        foreach (UpDownActionSource source in actions)
         {
             if (Vector3.Distance(source.transform.position, transform.position) < distanceToActivate)
             {
-                source.ExecuteAction();
+                source.ExecuteAction(down ? PlayerActionType.DOWN : PlayerActionType.UP);
             }
         }
     }
