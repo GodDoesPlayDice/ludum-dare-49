@@ -21,6 +21,8 @@ public class DeadScreenController : MonoBehaviour
     private Text oilEl;
     [SerializeField]
     private Text moneyEl;
+    [SerializeField]
+    private Button continueButton;
 
     [SerializeField]
     private PortfolioController portfolio;
@@ -51,6 +53,7 @@ public class DeadScreenController : MonoBehaviour
         titleEl.text = title;
         descriptionEl.text = description;
         FillGoodsValues();
+        continueButton.gameObject.SetActive(won);
     }
 
     private void FillGoodsValues()

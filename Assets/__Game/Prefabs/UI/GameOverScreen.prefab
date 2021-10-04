@@ -828,6 +828,7 @@ MonoBehaviour:
   woodEl: {fileID: 4375342382501223989}
   oilEl: {fileID: 451797610424188549}
   moneyEl: {fileID: 406647728665526391}
+  continueButton: {fileID: 1249213205071977480}
   portfolio: {fileID: 0}
 --- !u!1 &4199142271665100336
 GameObject:
@@ -848,7 +849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5539287305607979720
 RectTransform:
   m_ObjectHideFlags: 0
@@ -970,7 +971,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2876176879535174192}
           m_TargetAssemblyTypeName: DeadScreenController, Assembly-CSharp
-          m_MethodName: OnNewGameClick
+          m_MethodName: OnContinueClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
