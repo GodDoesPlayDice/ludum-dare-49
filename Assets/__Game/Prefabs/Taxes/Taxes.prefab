@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deltaTime: 5
-  taxesCount: 1000
+  taxesCount: 10000
   portfolio: {fileID: 0}
   taxesEvent: {fileID: 11400000, guid: 1229613f73ac72943b30f32e524a44b2, type: 2}
