@@ -48,6 +48,7 @@ MonoBehaviour:
   currentValue: 10000
   maxChangePerTick: 0
   maxAdditionalFluct: 0
+  startValue: 0
 --- !u!1 &602439062366536879
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +97,7 @@ MonoBehaviour:
   currentValue: 10000
   maxChangePerTick: 0
   maxAdditionalFluct: 0
+  startValue: 0
 --- !u!1 &602439062570039435
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 602439062570039429}
   - component: {fileID: 602439062570039434}
+  - component: {fileID: 6257171471930627979}
   m_Layer: 0
   m_Name: Economics
   m_TagString: Untagged
@@ -155,6 +158,34 @@ MonoBehaviour:
   - {fileID: 8162555986071229297}
   - {fileID: 2373511375394837817}
   - {fileID: 4543703347716207065}
+--- !u!114 &6257171471930627979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602439062570039435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae2d0d914efad942ae2d1c8bd04cb8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: e260a7a192a54e040b7de89fe988a8c8, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 602439062570039434}
+        m_TargetAssemblyTypeName: EconomicsController, Assembly-CSharp
+        m_MethodName: HandleHappening
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &602439063016539697
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +234,7 @@ MonoBehaviour:
   currentValue: 10000
   maxChangePerTick: 0
   maxAdditionalFluct: 0
+  startValue: 0
 --- !u!1 &4821279082647622086
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,4 +16,4 @@ MonoBehaviour:
   resourceTypes: 01000000
   newsString: The world is getting rid of plastic. The demand for <b>natural materials</b>
     is growing
-  stockPercent: 10
+  stockPercent: 5

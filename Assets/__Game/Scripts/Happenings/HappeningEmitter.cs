@@ -5,6 +5,19 @@ using UnityEngine;
 
 public class HappeningEmitter : MonoBehaviour
 {
+    private class HappeningHolder
+    {
+        public HappeningEntity happening;
+        public HappeningType type;
+        
+        public HappeningHolder(HappeningEntity happening, HappeningType type)
+        {
+            this.happening = happening;
+            this.type = type;
+        }
+        
+    }
+
     [SerializeField]
     private GameEventWithParam<HappeningEP> happeningEvent;
 
@@ -14,12 +27,14 @@ public class HappeningEmitter : MonoBehaviour
     [SerializeField]
     private Vector2 durationInterval = new Vector2(5f, 10f);
 
-    private List<HappeningEntity> crazyHappenings;
+    //private List<HappeningEntity> crazyHappenings;
     //private List<HappeningEntity> stockHappenings;
+    private List<HappeningHolder> happenings;
 
     private float nextCrazyTime;
     private float crazyStopTime;
-    private HappeningEntity crazyRunning;
+    //private HappeningEntity crazyRunning;
+    private HappeningHolder happeningRunning;
 
     //private float nextStockTime;
     //private float stockStopTime;
@@ -27,12 +42,12 @@ public class HappeningEmitter : MonoBehaviour
 
     void Start()
     {
-        crazyHappenings = Resources.LoadAll<HappeningEntity>("Crazy").ToList();
-        crazyHappenings.AddRange(Resources.LoadAll<HappeningEntity>("Stock"));
+        happenings = Resources.LoadAll<HappeningEntity>("Crazy").Select(v => new HappeningHolder(v, HappeningType.CRAZY)).ToList();
+        happenings.AddRange(Resources.LoadAll<HappeningEntity>("Stock").Select(v => new HappeningHolder(v, HappeningType.STOCK)));
         //stockHappenings = Resources.LoadAll<HappeningEntity>("Stock").ToList();
         nextCrazyTime = Random.Range(emissionInterval.x, emissionInterval.y);
         //nextStockTime = Random.Range(emissionInterval.x, emissionInterval.y);
-        Debug.Log("Loaded happenings: " + crazyHappenings.Count);
+        Debug.Log("Loaded happenings: " + happenings.Count);
     }
 
     // Now uses one list !!
@@ -46,22 +61,22 @@ public class HappeningEmitter : MonoBehaviour
     {
         if (Time.time > nextCrazyTime)
         {
-            Debug.Log("Started");
-            var happening = crazyHappenings[Random.Range(0, crazyHappenings.Count)];
-            happeningEvent.Raise(new HappeningEP(HappeningType.CRAZY, happening, true));
+            //Debug.Log("Started");
+            var holder = happenings[Random.Range(0, happenings.Count)];
+            happeningEvent.Raise(new HappeningEP(holder.type, holder.happening, true));
             nextCrazyTime = Time.time + Random.Range(emissionInterval.x, emissionInterval.y);
             crazyStopTime = Time.time + Random.Range(durationInterval.x, durationInterval.y);
-            crazyRunning = happening;
+            happeningRunning = holder;
         }
     }
 
     private void CheckAndStopCrazy()
     {
-        if (crazyRunning != null && Time.time > crazyStopTime)
+        if (happeningRunning != null && Time.time > crazyStopTime)
         {
-            Debug.Log("Stopped");
-            happeningEvent.Raise(new HappeningEP(HappeningType.CRAZY, crazyRunning, false));
-            crazyRunning = null;
+            //Debug.Log("Stopped");
+            happeningEvent.Raise(new HappeningEP(happeningRunning.type, happeningRunning.happening, false));
+            happeningRunning = null;
         }
     }
 

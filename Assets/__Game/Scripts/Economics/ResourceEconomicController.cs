@@ -18,9 +18,13 @@ public class ResourceEconomicController : MonoBehaviour
     public float maxChangePerTick;
     [HideInInspector]
     public float maxAdditionalFluct;
+    [HideInInspector]
+    public float startValue;
 
     private int ticksToNextChange;
     private float currentDeltaPerTick;
+
+    private HappeningEntity currentHappening;
 
     public void NextEconomicsTick()
     {
@@ -48,6 +52,16 @@ public class ResourceEconomicController : MonoBehaviour
         return type;
     }
 
+    public void SetCurrentHappening(HappeningEntity happening)
+    {
+        this.currentHappening = happening;
+    }
+
+    public void RemoveCurrentHappening()
+    {
+        this.currentHappening = null;
+    }
+
     // Full random in bounds
     private void CalcCurrentDelta()
     {
@@ -58,6 +72,16 @@ public class ResourceEconomicController : MonoBehaviour
 
     private float CalcCurrentFullValue()
     {
-        return currentValue + currentDeltaPerTick + Random.Range(-maxAdditionalFluct, maxAdditionalFluct);
+        return currentValue + currentDeltaPerTick + GetHappeningDelta() + Random.Range(-maxAdditionalFluct, maxAdditionalFluct);
+    }
+
+    private float GetHappeningDelta()
+    {
+        float result = 0f;
+        if (currentHappening != null)
+        {
+            result = startValue * (currentHappening.stockPercent / 100f);
+        }
+        return result;
     }
 }

@@ -42,6 +42,7 @@ public class EconomicsController : MonoBehaviour
             c.periodRange = new RangeInt(minTicksPeriod, maxTicksPeriod);
             c.maxChangePerTick = maxChangePerTick;
             c.maxAdditionalFluct = maxAdditionalFluct;
+            c.startValue = startValue;
         });
     }
 
@@ -57,5 +58,27 @@ public class EconomicsController : MonoBehaviour
     public float GetCurrentCost(ResourceType type)
     {
         return resourceControllers.Find(c => c.GetResourceType() == type).currentValue;
+    }
+
+    public float GetStartValue()
+    {
+        return startValue;
+    }
+
+    public void HandleHappening(HappeningEP param)
+    {
+        if (param.type != HappeningType.STOCK)
+        {
+            return;
+        }
+
+        if (param.isOn)
+        {
+            resourceControllers.FindAll(c => param.happening.resourceTypes.Contains(c.GetResourceType())).ForEach(c => c.SetCurrentHappening(param.happening));
+        }
+        else
+        {
+            resourceControllers.FindAll(c => param.happening.resourceTypes.Contains(c.GetResourceType())).ForEach(c => c.RemoveCurrentHappening());
+        }
     }
 }
