@@ -36,6 +36,8 @@ public class HappeningEmitter : MonoBehaviour
     //private HappeningEntity crazyRunning;
     private HappeningHolder happeningRunning;
 
+    private HappeningHolder previousHappening;
+
     //private float nextStockTime;
     //private float stockStopTime;
     //private HappeningEntity stockRunning;
@@ -62,7 +64,7 @@ public class HappeningEmitter : MonoBehaviour
         if (Time.time > nextCrazyTime)
         {
             //Debug.Log("Started");
-            var holder = happenings[Random.Range(0, happenings.Count)];
+            var holder = GetAlmostRandomHolder();
             happeningEvent.Raise(new HappeningEP(holder.type, holder.happening, true));
             nextCrazyTime = Time.time + Random.Range(emissionInterval.x, emissionInterval.y);
             crazyStopTime = Time.time + Random.Range(durationInterval.x, durationInterval.y);
@@ -76,8 +78,21 @@ public class HappeningEmitter : MonoBehaviour
         {
             //Debug.Log("Stopped");
             happeningEvent.Raise(new HappeningEP(happeningRunning.type, happeningRunning.happening, false));
+            previousHappening = happeningRunning;
             happeningRunning = null;
         }
+    }
+
+    private HappeningHolder GetAlmostRandomHolder()
+    {
+        HappeningHolder result = previousHappening;
+
+        // very bad
+        while (result == previousHappening) {
+            result = happenings[Random.Range(0, happenings.Count)];
+        }
+
+        return result;
     }
 
     /*
