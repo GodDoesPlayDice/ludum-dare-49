@@ -1913,6 +1913,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5711723119691120445, guid: a9ad1bd1f0fe6426ca0fe96eba562229, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 03578759f80584a10b7b0ab3b92620a6, type: 2}
     - target: {fileID: 6072226250791624424, guid: a9ad1bd1f0fe6426ca0fe96eba562229, type: 3}
       propertyPath: m_Name
       value: Hexagon-Platform
