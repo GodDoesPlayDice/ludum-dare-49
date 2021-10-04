@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class HappeningEmitter : MonoBehaviour
 {
+    public AudioSource eventAudioSource;
+
     private class HappeningHolder
     {
         public HappeningEntity happening;
@@ -69,6 +71,7 @@ public class HappeningEmitter : MonoBehaviour
             nextCrazyTime = Time.time + Random.Range(emissionInterval.x, emissionInterval.y);
             crazyStopTime = Time.time + Random.Range(durationInterval.x, durationInterval.y);
             happeningRunning = holder;
+            eventAudioSource.Play();
         }
     }
 

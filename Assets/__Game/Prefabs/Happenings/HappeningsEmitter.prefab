@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887a7df99ccb0884594c28aa79bc5926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventAudioSource: {fileID: 0}
   happeningEvent: {fileID: 11400000, guid: e260a7a192a54e040b7de89fe988a8c8, type: 2}
   emissionInterval: {x: 10.5, y: 15}
   durationInterval: {x: 5, y: 10}
