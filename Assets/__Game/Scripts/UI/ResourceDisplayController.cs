@@ -24,13 +24,13 @@ public class ResourceDisplayController : MonoBehaviour
     {
         SetResourceText(param.type, param.currentResource, param.resourceDelta);
         moneyText.text = formatMoney(param.currentMoney);
-        CreateSlidingText(moneyText.transform, param.moneyDelta > 0, (param.moneyDelta > 0 ? "+" : "") + param.moneyDelta);
+        CreateSlidingText(moneyText.transform, param.moneyDelta);
     }
 
     public void HandleTaxes(TaxesEP param)
     {
         moneyText.text = formatMoney(param.currentMoney);
-        CreateSlidingText(moneyText.transform, false, "Taxes: -" + formatMoney(param.amount));
+        CreateSlidingText(moneyText.transform, param.amount * -1, "Taxes: -" + formatMoney(param.amount));
     }
 
     // !!!!!
@@ -49,7 +49,7 @@ public class ResourceDisplayController : MonoBehaviour
         }
         textToChange.text = value.ToString();
 
-        CreateSlidingText(textToChange.transform, delta > 0, (delta > 0 ? "+" : "") + delta);
+        CreateSlidingText(textToChange.transform, delta);
     }
 
     private string formatMoney(int money)
@@ -59,10 +59,18 @@ public class ResourceDisplayController : MonoBehaviour
         return money.ToString("#,0.00 $", nfi);
     }
 
-    private void CreateSlidingText(Transform parent, bool positive, string text)
+    private void CreateSlidingText(Transform parent, int delta, string stringValue = null)
     {
+        if (delta == 0)
+        {
+            return;
+        }
         var instance = Instantiate(slidingText, parent);
         instance.transform.position = parent.position;
-        instance.Init(positive, text);
+        if (stringValue == null)
+        {
+            stringValue = (delta > 0 ? "+" : "") + delta;
+        }
+        instance.Init(delta > 0, stringValue);
     }
 }

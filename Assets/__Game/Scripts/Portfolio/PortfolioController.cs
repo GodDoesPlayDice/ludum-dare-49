@@ -69,15 +69,13 @@ public class PortfolioController : MonoBehaviour
         var forRemoval = holder.HowManyCanRemove(resourceCount);
         if (forRemoval == resourceCount)
         {
-            //Debug.Log("Sell, true " + holder.GetValue());
+            PlaySound(sellAudioSource);
             holder.Remove(resourceCount);
-            //Debug.Log("After " + holder.GetValue());
             money += moneyCost;
             result = new PortfolioChangedEP(holder.GetResourceType(), true, forRemoval * -1, moneyCost, holder.GetValue(), money);
         } else
         {
-            //Debug.Log("Sell, false");
-            //money -= moneyCost;
+            PlaySound(noMoneyAudioSource);
             result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, 0, holder.GetValue(), money);
         }
         return result;
@@ -88,14 +86,13 @@ public class PortfolioController : MonoBehaviour
         PortfolioChangedEP result;
         if (money >= moneyCost)
         {
-            //Debug.Log("Buy, true");
+            PlaySound(buyAudioSource);
             holder.Add(resourceCount);
             money -= moneyCost;
             result = new PortfolioChangedEP(holder.GetResourceType(), true, resourceCount, moneyCost * -1, holder.GetValue(), money);
         } else
         {
-            //Debug.Log("Buy, false");
-            //var resourceRemoved = holder.Remove(resourceCount);
+            PlaySound(noMoneyAudioSource);
             result = new PortfolioChangedEP(holder.GetResourceType(), false, 0, 0, holder.GetValue(), money);
         }
         return result;
