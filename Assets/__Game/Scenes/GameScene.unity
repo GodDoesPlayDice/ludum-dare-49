@@ -1916,7 +1916,7 @@ PrefabInstance:
     - target: {fileID: 5711723119691120445, guid: a9ad1bd1f0fe6426ca0fe96eba562229, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 03578759f80584a10b7b0ab3b92620a6, type: 2}
+      objectReference: {fileID: -1704216787321057505, guid: 2f3b5abc9955241b28dc266dd0399ae0, type: 3}
     - target: {fileID: 6072226250791624424, guid: a9ad1bd1f0fe6426ca0fe96eba562229, type: 3}
       propertyPath: m_Name
       value: Hexagon-Platform
