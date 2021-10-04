@@ -625,7 +625,7 @@ MonoBehaviour:
     m_FontSize: 142
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 142
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Game Name! '
+  m_Text: Stonx!
 --- !u!114 &7547552166617284041
 MonoBehaviour:
   m_ObjectHideFlags: 0
