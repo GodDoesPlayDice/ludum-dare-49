@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    // game loop
+    public GameOverEvent gameOverEvent;
+    public string gameOverOnFallTitle = "";
+    public string gameOverOnFallDescription = "";
+
     // movement variables
     public float movementSpeed = 4f;
     private Rigidbody rb;
@@ -112,6 +117,10 @@ public class PlayerController : MonoBehaviour
                 source.IsCloseToPlayer(false);
             }
         }
+
+
+        // game over if fall
+        if (transform.position.y <= -10) gameOverEvent.Raise(new GameOverEP(false, gameOverOnFallTitle, gameOverOnFallDescription));
     }
 
     private void Movement()
