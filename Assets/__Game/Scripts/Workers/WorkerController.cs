@@ -20,21 +20,6 @@ public class WorkerController : MonoBehaviour, UpDownActionSource
         brokerPlateController.ShowButtons(isClose);
     }
 
-    //private WorkerState state = WorkerState.buying;
-    private AudioSource buySellAudioSource;
-    /*
-    private PlayerController playerController;
-
-    private void Start()
-    {
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-    }
-    */
-    private void Start()
-    {
-        buySellAudioSource = GameObject.FindGameObjectWithTag("SellAndBuyAudio").GetComponent<AudioSource>();
-    }
-
     public void OnTick(WorkerTickEP workerTickEP)
     {
         //operationEvent.Raise(new WorkerOperationEP(resourceType, state == WorkerState.buying ? 1 * resourcesBuyingMultiplier : -1 * resourcesSellingMultiplier));
@@ -71,6 +56,5 @@ public class WorkerController : MonoBehaviour, UpDownActionSource
         {
             operationEvent.Raise(new WorkerOperationEP(resourceType, resourcesSellingMultiplier * -1));
         }
-        buySellAudioSource.Play();
     }
 }

@@ -13,6 +13,14 @@ public class PortfolioController : MonoBehaviour
     [SerializeField]
     private GameEventWithParam<PortfolioChangedEP> portfolioChangedEvent;
 
+    [SerializeField]
+    private AudioSource buyAudioSource;
+    [SerializeField]
+    private AudioSource sellAudioSource;
+    [SerializeField]
+    private AudioSource noMoneyAudioSource;
+
+
     private Dictionary<ResourceType, ResourceHolder> holdersMap;
 
     private void Start()
@@ -96,5 +104,14 @@ public class PortfolioController : MonoBehaviour
     private int CalcMoneyCost(ResourceType type, int count)
     {
         return Mathf.RoundToInt(economics.GetCurrentCost(type)) * count;
+    }
+
+
+    private void PlaySound(AudioSource audioSource)
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 }
