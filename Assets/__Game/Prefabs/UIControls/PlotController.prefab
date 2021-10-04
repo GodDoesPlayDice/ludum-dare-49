@@ -50,7 +50,7 @@ MonoBehaviour:
   step: 5
   verticalStep: 1000
   verticalMargin: 5
-  blankColor: {r: 1, g: 1, b: 1, a: 1}
+  blankColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   lineColor: {r: 0.8867924, g: 0.14929545, b: 0.04601282, a: 1}
   valuesHolder: {fileID: 4647438572642974604}
   textField: {fileID: 0}
