@@ -14,6 +14,8 @@ public class SlidingTextController : MonoBehaviour
     private float movementSpeed = 30f;
     [SerializeField]
     private float lifeTime = 2f;
+    [SerializeField]
+    private float startDownPos = 5f;
 
     private float startTime;
     private float endTime;
@@ -25,6 +27,7 @@ public class SlidingTextController : MonoBehaviour
         startTime = Time.time;
         endTime = startTime + lifeTime;
         text = GetComponent<Text>();
+        transform.position += Vector3.down * startDownPos;
     }
 
     private void Update()

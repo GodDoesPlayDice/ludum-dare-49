@@ -22,31 +22,34 @@ public class ResourceDisplayController : MonoBehaviour
 
     public void HandlePortfolioChanged(PortfolioChangedEP param)
     {
-        SetResourceText(param.type, param.currentResource);
+        SetResourceText(param.type, param.currentResource, param.resourceDelta);
         moneyText.text = formatMoney(param.currentMoney);
+        CreateSlidingText(moneyText.transform, param.moneyDelta > 0, (param.moneyDelta > 0 ? "+" : "") + param.moneyDelta);
     }
 
     public void HandleTaxes(TaxesEP param)
     {
         moneyText.text = formatMoney(param.currentMoney);
-        var instance = Instantiate(slidingText, moneyText.transform);
-        instance.transform.position = moneyText.transform.position;
-        instance.Init(false, "Taxes: -" + formatMoney(param.amount));
+        CreateSlidingText(moneyText.transform, false, "Taxes: -" + formatMoney(param.amount));
     }
 
     // !!!!!
-    public void SetResourceText(ResourceType type, int value)
+    public void SetResourceText(ResourceType type, int value, int delta)
     {
+        Text textToChange = null;
         if (type == ResourceType.GOLD)
         {
-            goldText.text = value.ToString();
+            textToChange = goldText;
         } else if (type == ResourceType.WOOD)
         {
-            woodText.text = value.ToString();
+            textToChange = woodText;
         } else if (type == ResourceType.OIL)
         {
-            oilText.text = value.ToString();
+            textToChange = oilText;
         }
+        textToChange.text = value.ToString();
+
+        CreateSlidingText(textToChange.transform, delta > 0, (delta > 0 ? "+" : "") + delta);
     }
 
     private string formatMoney(int money)
@@ -54,5 +57,12 @@ public class ResourceDisplayController : MonoBehaviour
         var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
         nfi.NumberGroupSeparator = " ";
         return money.ToString("#,0.00 $", nfi);
+    }
+
+    private void CreateSlidingText(Transform parent, bool positive, string text)
+    {
+        var instance = Instantiate(slidingText, parent);
+        instance.transform.position = parent.position;
+        instance.Init(positive, text);
     }
 }
