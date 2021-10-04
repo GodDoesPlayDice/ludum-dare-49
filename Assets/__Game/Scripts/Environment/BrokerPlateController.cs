@@ -9,6 +9,7 @@ public class BrokerPlateController : MonoBehaviour
     public GameObject resourceText;
     public GameObject costText;
     public GameObject[] buttons;
+    public GameObject resourceImage;
 
     private AimConstraint aimConstraint;
     private Transform cameraHolder;
@@ -43,12 +44,14 @@ public class BrokerPlateController : MonoBehaviour
             {
                 if (!button.activeSelf) button.SetActive(true);
             }
+            resourceImage.SetActive(false);
         } else
         {
             foreach (GameObject button in buttons)
             {
                 if (button.activeSelf) button.SetActive(false);
             }
+            resourceImage.SetActive(true);
         }
     }
 
