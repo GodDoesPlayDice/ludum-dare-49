@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-
 public class GameLoopController : MonoBehaviour
 {
     public GameObject gameOverScreen;
@@ -13,9 +11,17 @@ public class GameLoopController : MonoBehaviour
     public AudioSource musicAudioSource;
     public AudioSource noiseAudioSource;
 
-    public void OnGameOver(GameOverEP gameOverEP)
+    private DeadScreenController screenController;
+
+    private void Start()
     {
-        if (gameOverEP.success)
+        screenController = gameOverScreen.GetComponentInChildren<DeadScreenController>();
+        Time.timeScale = 1f;
+    }
+
+    public void OnGameOver(GameOverEP param)
+    {
+        if (param.success)
         {
             winAudioSource.Play();
         } else
@@ -26,6 +32,8 @@ public class GameLoopController : MonoBehaviour
         musicAudioSource.volume = 0.3f;
         noiseAudioSource.volume = 0.4f;
         gameOverScreen.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
+
+        screenController.SetDeadScreenData(param.success, param.title, param.description);
     }
 }

@@ -63,6 +63,11 @@ public class PortfolioController : MonoBehaviour
         return money;
     }
 
+    public int GetCurrentResource(ResourceType type)
+    {
+        return holdersMap[type].GetValue();
+    }
+
     private PortfolioChangedEP SellResourceAndGetEvent(ResourceHolder holder, int resourceCount, int moneyCost)
     {
         PortfolioChangedEP result;

@@ -820,6 +820,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a8ddd81785bf147abd636765121dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadSceneEvent: {fileID: 11400000, guid: 374c666e88658a64eb05b90ef6fa51be, type: 2}
+  titleEl: {fileID: 884010206483639324}
+  descriptionEl: {fileID: 1274154722179038113}
+  goldEl: {fileID: 6726028645569867890}
+  woodEl: {fileID: 4375342382501223989}
+  oilEl: {fileID: 451797610424188549}
+  moneyEl: {fileID: 406647728665526391}
+  portfolio: {fileID: 0}
 --- !u!1 &4324012027310234986
 GameObject:
   m_ObjectHideFlags: 0
