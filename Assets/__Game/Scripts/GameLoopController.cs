@@ -11,6 +11,8 @@ public class GameLoopController : MonoBehaviour
     public AudioSource musicAudioSource;
     public AudioSource noiseAudioSource;
 
+    public PortfolioController portfolio;
+
     private DeadScreenController screenController;
 
     private void Start()
@@ -40,6 +42,7 @@ public class GameLoopController : MonoBehaviour
 
     public void ContinueAfterWon()
     {
+        portfolio.SetWon(true);
         gameOverScreen.SetActive(false);
         Time.timeScale = 1f;
     }

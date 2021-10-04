@@ -27,6 +27,8 @@ public class PortfolioController : MonoBehaviour
 
     private Dictionary<ResourceType, ResourceHolder> holdersMap;
 
+    private bool won;
+
     private void Start()
     {
         holdersMap = new Dictionary<ResourceType, ResourceHolder>();
@@ -35,8 +37,6 @@ public class PortfolioController : MonoBehaviour
             holdersMap.Add(h.GetResourceType(), h);
             portfolioChangedEvent.Raise(new PortfolioChangedEP(h.GetResourceType(), true, 0, 0, h.GetValue(), money));
         }
-
-
     }
 
     public void HandleWorkerOperation(WorkerOperationEP operation)
@@ -63,7 +63,7 @@ public class PortfolioController : MonoBehaviour
         if (money < 0)
         {
             gameOverEvent.Raise(new GameOverEP(false, "You are bankrupt!", "Tax office took all your investments, your house and your tie to pay off a debt.\n You should pay taxes on time!"));
-        } else if (money >= winCondition)
+        } else if (money >= winCondition && !won)
         {
             gameOverEvent.Raise(new GameOverEP(true, "You won!", "Now you can continue to earn all money in the world!"));
         }
@@ -77,6 +77,11 @@ public class PortfolioController : MonoBehaviour
     public int GetCurrentResource(ResourceType type)
     {
         return holdersMap[type].GetValue();
+    }
+
+    public void SetWon(bool won)
+    {
+        this.won = won;
     }
 
     private PortfolioChangedEP SellResourceAndGetEvent(ResourceHolder holder, int resourceCount, int moneyCost)

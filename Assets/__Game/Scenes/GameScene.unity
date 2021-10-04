@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 18197722}
-  m_IndirectSpecularColor: {r: 0.28462127, g: 0.37120965, b: 0.49880528, a: 1}
+  m_IndirectSpecularColor: {r: 0.28461978, g: 0.37120783, b: 0.49880326, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1502,6 +1502,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4750074195943165283, guid: 52db2ec3ec5174c928ceaf946cfe5604, type: 3}
+      propertyPath: portfolio
+      value: 
+      objectReference: {fileID: 1568496386518839314}
     - target: {fileID: 4750074195943165283, guid: 52db2ec3ec5174c928ceaf946cfe5604, type: 3}
       propertyPath: gameOverScreen
       value: 
