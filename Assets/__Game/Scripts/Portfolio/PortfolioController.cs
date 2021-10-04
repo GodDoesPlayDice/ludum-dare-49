@@ -21,7 +21,10 @@ public class PortfolioController : MonoBehaviour
         foreach (ResourceHolder h in resourceHolders)
         {
             holdersMap.Add(h.GetResourceType(), h);
+            portfolioChangedEvent.Raise(new PortfolioChangedEP(h.GetResourceType(), true, 0, 0, h.GetValue(), money));
         }
+
+
     }
 
     public void HandleWorkerOperation(WorkerOperationEP operation)

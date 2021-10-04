@@ -19,7 +19,6 @@ public class ResourceDisplayController : MonoBehaviour
 
     public void HandlePortfolioChanged(PortfolioChangedEP param)
     {
-
         var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
         nfi.NumberGroupSeparator = " ";
 
