@@ -113,11 +113,11 @@ public class PlatformController : MonoBehaviour
 
     private void ResetRotation()
     {
-        rb.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, Vector3.up), 0.18f));
+        rb.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0), 0.1f));
 
         if (Vector3.Angle(transform.up, Vector3.up) <= 3)
         {
-            rb.MoveRotation(Quaternion.LookRotation(Vector3.forward, Vector3.up));
+            rb.MoveRotation(Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0));
             resetingRotation = false;
             rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
         }

@@ -368,8 +368,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yRotationSpeed: 0.9
-  maxScaleMultiplier: 1.35
-  scaleSmooth: 0.1
+  maxScaleMultiplier: 1.8
+  scaleSmooth: 0.008
 --- !u!114 &6378654307093836915
 MonoBehaviour:
   m_ObjectHideFlags: 0
