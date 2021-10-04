@@ -8,6 +8,7 @@ public class BrokerPlateController : MonoBehaviour
 {
     public GameObject resourceText;
     public GameObject costText;
+    public GameObject[] buttons;
 
     private AimConstraint aimConstraint;
     private Transform cameraHolder;
@@ -32,6 +33,23 @@ public class BrokerPlateController : MonoBehaviour
     public void OnCostChange(ResourceChangedEP resourceChangedEP) 
     {
         costTextMesh.text = formatMoney((int)resourceChangedEP.value);
+    }
+
+    public void ShowButtons(bool needToShow)
+    {
+        if (needToShow)
+        {
+            foreach (GameObject button in buttons)
+            {
+                if (!button.activeSelf) button.SetActive(true);
+            }
+        } else
+        {
+            foreach (GameObject button in buttons)
+            {
+                if (button.activeSelf) button.SetActive(false);
+            }
+        }
     }
 
     private string formatMoney(int money)

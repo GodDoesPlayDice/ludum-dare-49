@@ -98,6 +98,20 @@ public class PlayerController : MonoBehaviour
     {
         Movement();
         Rotation();
+
+
+        // is close to worker
+        foreach (UpDownActionSource source in actions)
+        {
+            if (Vector3.Distance(source.transform.position, transform.position) < distanceToActivate)
+            {
+                source.IsCloseToPlayer(true);
+            }
+            else
+            {
+                source.IsCloseToPlayer(false);
+            }
+        }
     }
 
     private void Movement()

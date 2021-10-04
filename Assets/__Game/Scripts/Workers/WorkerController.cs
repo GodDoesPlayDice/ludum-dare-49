@@ -12,6 +12,13 @@ public class WorkerController : MonoBehaviour, UpDownActionSource
     public GameEventWithParam<WorkerOperationEP> operationEvent;
     public int resourcesBuyingMultiplier = 1;
     public int resourcesSellingMultiplier = 1;
+    public BrokerPlateController brokerPlateController;
+
+    public void IsCloseToPlayer(bool isClose)
+    {
+        if (brokerPlateController == null) return;
+        brokerPlateController.ShowButtons(isClose);
+    }
 
     //private WorkerState state = WorkerState.buying;
     private AudioSource buySellAudioSource;
