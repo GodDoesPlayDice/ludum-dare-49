@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverEvent: {fileID: 11400000, guid: 709ff2deb78137a45b187c5c74806d6c, type: 2}
-  gameOverOnFallTitle: 
-  gameOverOnFallDescription: 
+  gameOverOnFallTitle: You're out of the market!
+  gameOverOnFallDescription: Sometimes the terms of trade lead to the fact that players
+    need to try very hard to stay in the market.
   movementSpeed: 4
   distanceToActivate: 2.2
 --- !u!82 &2006991967
