@@ -453,6 +453,10 @@ PrefabInstance:
       propertyPath: m_RotationOffset.y
       value: -61.098522
       objectReference: {fileID: 0}
+    - target: {fileID: 5742694860896141691, guid: e01d20df06c65470c9ec74a35e0b88cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5784799653398001812, guid: e01d20df06c65470c9ec74a35e0b88cf, type: 3}
       propertyPath: m_Name
       value: Worker African

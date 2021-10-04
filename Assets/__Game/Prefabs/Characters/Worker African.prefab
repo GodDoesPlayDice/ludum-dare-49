@@ -1011,6 +1011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: broker-plate
       objectReference: {fileID: 0}
+    - target: {fileID: 7668689530265964605, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
 --- !u!4 &1427570929848151356 stripped
