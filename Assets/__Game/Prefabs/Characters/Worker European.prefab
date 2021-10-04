@@ -956,6 +956,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4040221411355453874}
     m_Modifications:
     - target: {fileID: 431809932159979060, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
+      propertyPath: costText
+      value: 
+      objectReference: {fileID: 6542782394310638729}
+    - target: {fileID: 431809932159979060, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
       propertyPath: resourceText
       value: 
       objectReference: {fileID: 8982428191120729730}
@@ -1023,11 +1027,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: broker-plate
       objectReference: {fileID: 0}
+    - target: {fileID: 6192762630730659445, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
+      propertyPath: eventForListen
+      value: 
+      objectReference: {fileID: 11400000, guid: 79c3f0557fa158a4c8c9b90cc3f4eeed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
 --- !u!4 &1938201626183477957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3895981747248725114, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
+  m_PrefabInstance: {fileID: 3239406299551258303}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6542782394310638729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8518575402065259062, guid: b39b7ce4b3b70421fa0d2f00670b716e, type: 3}
   m_PrefabInstance: {fileID: 3239406299551258303}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8982428191120729730 stripped

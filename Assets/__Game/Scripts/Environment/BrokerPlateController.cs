@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using System.Globalization;
 
 public class BrokerPlateController : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class BrokerPlateController : MonoBehaviour
 
     private AimConstraint aimConstraint;
     private Transform cameraHolder;
+    private TextMesh costTextMesh;
     private void Start()
     {
         resourceText.SetActive(true);
         aimConstraint = GetComponent<AimConstraint>();
         cameraHolder = GameObject.FindGameObjectWithTag("CameraHolder").transform;
 
+        costTextMesh = costText.GetComponent<TextMesh>();
         if (aimConstraint != null)
         {
             aimConstraint.constraintActive = true;
@@ -24,6 +27,17 @@ public class BrokerPlateController : MonoBehaviour
             constraintSource.weight = 1;
             aimConstraint.AddSource(constraintSource);
         }
+    }
 
+    public void OnCostChange(ResourceChangedEP resourceChangedEP) 
+    {
+        costTextMesh.text = formatMoney((int)resourceChangedEP.value);
+    }
+
+    private string formatMoney(int money)
+    {
+        var nfi = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+        nfi.NumberGroupSeparator = " ";
+        return money.ToString("#,0.00 $", nfi);
     }
 }
