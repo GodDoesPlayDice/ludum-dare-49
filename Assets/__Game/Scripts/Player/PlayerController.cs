@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
         // is close to worker
         foreach (UpDownActionSource source in actions)
         {
-            if (Vector3.Distance(source.transform.position, transform.position) < distanceToActivate)
+            if (IsInDistanceToActivate(source))
             {
                 source.IsCloseToPlayer(true);
             }
@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
         
         foreach (UpDownActionSource source in actions)
         {
-            if (Vector3.Distance(source.transform.position, transform.position) < distanceToActivate)
+            if (IsInDistanceToActivate(source))
             {
                 source.ExecuteAction(down ? PlayerActionType.DOWN : PlayerActionType.UP);
             }
@@ -177,5 +177,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         return interfaces;
+    }
+
+    public bool IsInDistanceToActivate(UpDownActionSource source)
+    {
+        return Vector3.Distance(source.transform.position, transform.position) < (distanceToActivate * source.transform.localScale.x);
     }
 }
