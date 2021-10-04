@@ -62,7 +62,7 @@ public class PortfolioController : MonoBehaviour
         money -= amount;
         if (money < 0)
         {
-            gameOverEvent.Raise(new GameOverEP(false, "You are bunkrupt!", "Tax office took all your investments, your house and your tie to pay off a debt.\n You should pay taxes on time!"));
+            gameOverEvent.Raise(new GameOverEP(false, "You are bankrupt!", "Tax office took all your investments, your house and your tie to pay off a debt.\n You should pay taxes on time!"));
         } else if (money >= winCondition)
         {
             gameOverEvent.Raise(new GameOverEP(true, "You won!", "Now you can continue to earn all money in the world!"));
