@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WoodDownEvent
   m_EditorClassIdentifier: 
   crazyType: 0
-  resourceTypes: 
-  newsString: 
-  stockPercent: 0
+  resourceTypes: 01000000
+  newsString: Rita Tumbler made a speech on reducing <b>deforestation</b>
+  stockPercent: -10

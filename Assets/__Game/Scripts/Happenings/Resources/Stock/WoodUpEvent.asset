@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WoodUpEvent
   m_EditorClassIdentifier: 
   crazyType: 0
-  resourceTypes: 
-  newsString: 
-  stockPercent: 0
+  resourceTypes: 01000000
+  newsString: The world is getting rid of plastic. The demand for <b>natural materials</b>
+    is growing
+  stockPercent: 10
