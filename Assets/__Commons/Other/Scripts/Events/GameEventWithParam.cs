@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using GenericUnityObjects;
 
-[CreateGenericAssetMenu(MenuName = "Custom/Events/GameEventWithParam", Order = 52)]
-public class GameEventWithParam<T> : GenericScriptableObject where T : IGameEventParam
+//[CreateAssetMenu(menuName = "Custom/Events/GameEventWithParam", order = 52)]
+public class GameEventWithParam<T> : ScriptableObject where T : IGameEventParam
 {
     private List<GameEventWithParamListener<T>> listeners = new List<GameEventWithParamListener<T>>();
 

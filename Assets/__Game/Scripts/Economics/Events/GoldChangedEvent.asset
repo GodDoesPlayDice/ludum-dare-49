@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -446848393, guid: f015d5a49b74f1242941edecde00e50f, type: 3}
+  m_Script: {fileID: 11500000, guid: 98c2c2811be4d7e4e94dfa9cd3024c98, type: 3}
   m_Name: GoldChangedEvent
   m_EditorClassIdentifier: 

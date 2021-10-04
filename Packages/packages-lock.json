@@ -1,32 +1,5 @@
 {
   "dependencies": {
-    "com.solidalloy.generic-unity-objects": {
-      "version": "https://github.com/SolidAlloy/GenericUnityObjects.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.solidalloy.util": "1.31.0",
-        "com.solidalloy.type-references": "2.10.0"
-      },
-      "hash": "6be44782a79d751f480d6290fe776314c22dcd76"
-    },
-    "com.solidalloy.type-references": {
-      "version": "https://github.com/SolidAlloy/ClassTypeReference-for-Unity.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.solidalloy.util": "1.31.0",
-        "com.unity.settings-manager": "1.0.3"
-      },
-      "hash": "3c01f3ad0f3d491ca950e40c24107982f1c2b9e6"
-    },
-    "com.solidalloy.util": {
-      "version": "https://github.com/SolidAlloy/SolidUtilities.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "0547b4d844e77f0f8752218cefb75bbb5914d022"
-    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
@@ -101,13 +74,6 @@
     "com.unity.searcher": {
       "version": "4.3.2",
       "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.settings-manager": {
-      "version": "1.0.3",
-      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

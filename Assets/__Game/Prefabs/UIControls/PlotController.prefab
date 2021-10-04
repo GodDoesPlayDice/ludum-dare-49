@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4647438572642974602}
   - component: {fileID: 4647438572642974605}
   - component: {fileID: 4647438572642974604}
-  - component: {fileID: 4647438572642974603}
+  - component: {fileID: 2907220075331374535}
   m_Layer: 0
   m_Name: PlotController
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4647438572642974607}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 591.17303, y: 532.9439, z: 124.7046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -45,14 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3b99c39e599874783c28655af024f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  texture: {fileID: 2800000, guid: f96495b5af0bb024f91eda2468664743, type: 3}
   sizeX: 150
   step: 5
-  verticalStep: 100
+  verticalStep: 1000
   verticalMargin: 5
   blankColor: {r: 1, g: 1, b: 1, a: 1}
   lineColor: {r: 0.8867924, g: 0.14929545, b: 0.04601282, a: 1}
   valuesHolder: {fileID: 4647438572642974604}
+  textField: {fileID: 0}
 --- !u!114 &4647438572642974604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd9887a1df4ccd45b2c4a85e20dfdc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4647438572642974603
+--- !u!114 &2907220075331374535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,10 +75,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4647438572642974607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1042226372, guid: 26a393524ab4dca488b36ac12da55044, type: 3}
+  m_Script: {fileID: 11500000, guid: 318d2f1d9d3c4fc48b01e0f6c96918c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventForListen: {fileID: 0}
+  eventForListen: {fileID: 11400000, guid: 88ecc7984ee68824692b4b2e46318a60, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:

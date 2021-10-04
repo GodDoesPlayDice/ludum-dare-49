@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1758012406, guid: a3ed997b3a560e24f994c283674ba46a, type: 3}
+  m_Script: {fileID: 11500000, guid: a8c75b2ce296b494a8ca64f0bbcda338, type: 3}
   m_Name: SceneLoadingProgressEventSO
   m_EditorClassIdentifier: 
