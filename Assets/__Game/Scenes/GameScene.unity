@@ -221,6 +221,50 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 90801616, guid: 5a83b822f70814280a12331b76d95ab2, type: 3}
   m_PrefabInstance: {fileID: 1148011559683810480}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &137050151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 399720839132409011, guid: 411051556b18042ab86a16a3b8d94fa8, type: 3}
+  m_PrefabInstance: {fileID: 670330653678115616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &137050152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137050151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9e7a95594d8a14b9390567b45f02af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventForListen: {fileID: 11400000, guid: 709ff2deb78137a45b187c5c74806d6c, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 137050153}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Mute
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &137050153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 670330654067773924, guid: 411051556b18042ab86a16a3b8d94fa8, type: 3}
+  m_PrefabInstance: {fileID: 670330653678115616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137050151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df1b2a67892b42af9cf95c962ac4f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &347411799
 PrefabInstance:
   m_ObjectHideFlags: 0

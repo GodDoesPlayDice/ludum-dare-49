@@ -183,4 +183,9 @@ public class PlayerController : MonoBehaviour
     {
         return Vector3.Distance(source.transform.position, transform.position) < (distanceToActivate * source.transform.localScale.x);
     }
+
+    public void Mute()
+    {
+        audioSource.volume = 0;
+    }
 }
