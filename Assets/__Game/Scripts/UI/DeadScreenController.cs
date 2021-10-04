@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,25 @@ public class DeadScreenController : MonoBehaviour
     [SerializeField]
     private PortfolioController portfolio;
 
+    private Action continueCallback;
+
     public void OnNewGameClick() 
     {
         //loadSceneEvent.Raise(new LoadSceneEP(SceneEnum.GAME, SceneEnum.GAME, true, active: true));
         SceneManager.LoadScene((int) SceneEnum.GAME);
+    }
+
+    public void OnContinueClick()
+    {
+        if (continueCallback != null)
+        {
+            continueCallback();
+        }
+    }
+
+    public void SetContuinueCallback(Action continueCallback)
+    {
+        this.continueCallback = continueCallback;
     }
 
     public void SetDeadScreenData(bool won, string title, string description)

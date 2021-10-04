@@ -16,6 +16,7 @@ public class GameLoopController : MonoBehaviour
     private void Start()
     {
         screenController = gameOverScreen.GetComponentInChildren<DeadScreenController>();
+        screenController.SetContuinueCallback(ContinueAfterWon);
         Time.timeScale = 1f;
     }
 
@@ -35,5 +36,11 @@ public class GameLoopController : MonoBehaviour
         Time.timeScale = 0f;
 
         screenController.SetDeadScreenData(param.success, param.title, param.description);
+    }
+
+    public void ContinueAfterWon()
+    {
+        gameOverScreen.SetActive(false);
+        Time.timeScale = 1f;
     }
 }

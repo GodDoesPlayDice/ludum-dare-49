@@ -152,7 +152,7 @@ MonoBehaviour:
   maxBound: 10000
   minTicksPeriod: 2
   maxTicksPeriod: 6
-  maxChangePerTick: 300
+  maxChangePerTick: 200
   maxAdditionalFluct: 50
   resourceControllers:
   - {fileID: 8162555986071229297}
