@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positionOffset: {x: 0, y: 7, z: -5}
-  smoothForMovement: 0.045
+  smoothForMovement: 0.054
